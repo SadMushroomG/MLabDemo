@@ -1,0 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerMovementController : MonoBehaviour
+{
+    public float moveSpeed = 5f; // 移动速度
+    public Vector2 moveRangeX = new Vector2(-8, 8); // 移动范围X    
+    public Vector2 moveRangeY = new Vector2(-5, 5); // 移动范围X    
+    void Update()
+    {
+        // 获取WASD按键输入
+        float moveX = Input.GetAxis("Horizontal"); // A/D 或 左/右箭头
+        float moveY = Input.GetAxis("Vertical");   // W/S 或 上/下箭头
+
+        // 计算移动方向
+        Vector2 movement = new Vector2(moveX, moveY);
+
+        // 归一化移动向量以防止斜向移动速度过快
+        movement = movement * moveSpeed * Time.deltaTime;
+        
+        movement.x = Mathf.Clamp(movement.x, moveRangeX.x - transform.position.x, moveRangeX.y - transform.position.x);
+        movement.y = Mathf.Clamp(movement.y, moveRangeY.x - transform.position.y, moveRangeY.y - transform.position.y);
+
+        // 移动角色
+        transform.Translate(movement);
+    }
+}

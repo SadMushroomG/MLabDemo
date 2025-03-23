@@ -1,32 +1,44 @@
 using UnityEngine;
 
-public class BulletBase : ActorBase
+public class BulletBase : MonoBehaviour
 {
+    public MLabActorType actorType;
     public MLabActorType targetType;
 
-    public ActorBase owner;
-
-    private Vector3 direction;
-    private float speed;
+    private WeaponBase Weapon;
+    protected GameObject target;
+    protected float speed;
     private float bulletDamage;
-    private float lifetime = 5f; // Bullet will be destroyed after 5 seconds
+    protected float lifetime = 5f; // Bullet will be destroyed after 5 seconds
 
-    public void Initialize(Vector3 dir, float spd, float dmg)
+    public virtual void Initialize(GameObject target, float spd, float dmg, MLabActorType actorType, WeaponBase weapon)
     {
-        direction = dir;
+        this.target = target;
         speed = spd;
         bulletDamage = dmg;
-
+        this.actorType = actorType;
+        this.Weapon = weapon;
         targetType = GameMain.Instance.GetTargeType(actorType);
     }
 
     private void Update()
     {
+        UpdateBehaviour();
+    }
+
+    public virtual void UpdateBehaviour()
+    {
+        if (target == null || target.transform == null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         // Move the bullet
-        transform.position += direction * speed * GameMain.DeltaTime;
+        Vector3 direction = target.transform.position - transform.position;
+        transform.position += direction.normalized * speed * GameMain.deltaTime;
 
         // Destroy bullet after lifetime
-        lifetime -= GameMain.DeltaTime;
+        lifetime -= GameMain.deltaTime;
         if (lifetime <= 0)
         {
             Destroy(gameObject);
@@ -35,13 +47,20 @@ public class BulletBase : ActorBase
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        OnBulletHit(other);
+    }
+
+    public virtual void OnBulletHit(Collider2D other)
+    {
         // Check if the hit object has a health component
         var actor = other.GetComponent<ActorBase>();
         if (actor != null && actor.actorType == targetType)
         {
             // Deal damage
+            //DamageCalculator.Instance.CalculateDamage(this, target.GetComponent<ActorBase>());
             actor.TakeDamage(bulletDamage);
-            actor.SetLastAttackedActor(owner);
+            actor.SetLastAttackedActor(GetComponentInParent<WeaponBase>()?.GetOwner());
+            Weapon.OnBulletHit(this);
             Destroy(gameObject);
         }
     }

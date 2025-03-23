@@ -26,25 +26,25 @@ public class ActorManager : MonoBehaviour
     public GameObject actorBlue;
 
     [Header("Spawn Area Settings")]
-    [LabelText("生成区域半径")]
-    [SerializeField] public float spawnAreaRadius = 3f;
     //[LabelText("生成区域宽度")]
     //[SerializeField] private float spawnAreaWidth = 10f;
     //[LabelText("生成区域高度")]
     //[SerializeField] private float spawnAreaHeight = 10f;
-    [LabelText("生成区域中心偏移")]
-    [SerializeField] private Vector2 spawnAreaOffset = Vector2.zero;
+    [LabelText("生成区域半径")]
+    [SerializeField] private float spawnAreaRadius = 1f;
+    //[LabelText("生成区域中心偏移")]
+    //[SerializeField] private Vector2 spawnAreaOffset = Vector2.zero;
 
-    private List<GameObject> redActorList = new List<GameObject>();
-    private List<GameObject> blueActorList = new List<GameObject>();
+    public List<GameObject> redActorList = new List<GameObject>();
+    public List<GameObject> blueActorList = new List<GameObject>();
     
     private int redSpawnCount = 0; 
     private int blueSpawnCount = 0; 
 
     void Awake()
     {
-        redActorList = GameObject.FindGameObjectsWithTag("PlayerA").ToList();
-        blueActorList = GameObject.FindGameObjectsWithTag("PlayerB").ToList();
+        //redActorList = GameObject.FindGameObjectsWithTag("PlayerA").ToList();
+        //blueActorList = GameObject.FindGameObjectsWithTag("PlayerB").ToList();
     }
 
     // Update is called once per frame
@@ -54,7 +54,7 @@ public class ActorManager : MonoBehaviour
         {
             for(int i = 0; i < redSpawnCount; i++)
             {
-                SpawnActor(MLabActorType.PlayerA);
+                SpawnActor(MLabActorType.chessRed);
             }
             redSpawnCount = 0;
         }
@@ -69,35 +69,41 @@ public class ActorManager : MonoBehaviour
         }
     }
 
-    private GameObject GetPrefab(MLabActorType actorType)
-    { 
-        return actorType == MLabActorType.PlayerA ? actorRed : actorBlue;
-    }
-
-    private Vector2 GetSpawnPosition(MLabActorType actorType)
-    {
-        return actorType == MLabActorType.PlayerA ? GameMain.Instance.redSpawn.transform.position : GameMain.Instance.blueSpawn.transform.position;
-    }
-
     public void SpawnActor(MLabActorType actorType)
     {
-        GameObject actor = GetPrefab(actorType);
-        
-        var spwanPos = GetSpawnPosition(actorType);
+        GameObject actor = actorType == MLabActorType.chessRed ? actorRed : actorBlue;
 
-        var random = Random.insideUnitCircle;
-        spwanPos += random * spawnAreaRadius;
+        var position = Vector3.zero;
+        if (actorType == MLabActorType.chessRed)
+        {
+            position = GameMain.Instance.redSpawn.transform.position;
+        }
+        else
+        {
+            position = GameMain.Instance.blueSpawn.transform.position;
+        }
 
-        //float randomX = Random.Range(-spawnAreaWidth/2, spawnAreaWidth/2) + spawnAreaOffset.x + transform.position.x;
-        //float randomY = Random.Range(-spawnAreaHeight/2, spawnAreaHeight/2) + spawnAreaOffset.y + transform.position.y;
-        Vector3 spawnPosition = new Vector3(spwanPos.x, spwanPos.y, transform.position.z);
+
+        // Calculate random position within spawn area
+        var random = Random.insideUnitCircle * spawnAreaRadius;
+        position.x += random.x;
+        position.y += random.y;
         
-        Instantiate(actor, spawnPosition, Quaternion.identity);
+        var instance = Instantiate(actor, position, Quaternion.identity);
+
+        if (actorType == MLabActorType.PlayerB)
+        {
+            blueActorList.Add(instance);
+        }
+        else
+        { 
+            redActorList.Add(instance);
+        }
     }
 
     public void RemoveActor(GameObject actor, MLabActorType actorType)
     {
-        if(actorType == MLabActorType.PlayerA)
+        if(actorType == MLabActorType.chessRed)
         {
             GameMain.Instance.blueSpawn.GetExp(actor.GetComponent<ActorBase>().expValue);
             redActorList.Remove(actor);
@@ -115,11 +121,14 @@ public class ActorManager : MonoBehaviour
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = new Color(1, 0, 0, 0.3f);
-        Gizmos.DrawSphere(GameMain.Instance.redSpawn.transform.position, spawnAreaRadius);
-
-        Gizmos.color = new Color(0, 0, 1, 0.3f);
-        Gizmos.DrawSphere(GameMain.Instance.redSpawn.transform.position, spawnAreaRadius);
+        //// Draw spawn area in editor
+        //Gizmos.color = new Color(0, 1, 0, 0.3f);
+        //Vector3 center = transform.position + new Vector3(spawnAreaOffset.x, spawnAreaOffset.y, 0);
+        //Gizmos.DrawCube(center, new Vector3(spawnAreaWidth, spawnAreaHeight, 0.1f));
+        
+        //// Draw outline
+        //Gizmos.color = Color.green;
+        //Gizmos.DrawWireCube(center, new Vector3(spawnAreaWidth, spawnAreaHeight, 0.1f));
     }
 #endif
 }

@@ -41,24 +41,8 @@ public class ActorBase : MonoBehaviour
     public float expValue = 1;
 
     [BoxGroup("攻击")]
-    [LabelText("攻击范围")]
-    [SerializeField] protected float attackRange = 5f;
-
-    [BoxGroup("攻击")]
-    [LabelText("攻击冷却")]
-    [SerializeField] protected float attackCooldown = 1f;
-
-    [BoxGroup("攻击")]
-    [LabelText("子弹速度")]
-    [SerializeField] protected float bulletSpeed = 10f;
-
-    [BoxGroup("攻击")]
-    [LabelText("伤害")]
-    [SerializeField] protected float damage = 10f;
-
-    [BoxGroup("攻击")]
-    [LabelText("子弹预制体")]
-    [SerializeField] protected GameObject bulletPrefab;
+    [LabelText("武器")]
+    [SerializeField] protected WeaponBase weapon;
 
     [BoxGroup("动画")]
     [LabelText("使用动画")]
@@ -69,8 +53,6 @@ public class ActorBase : MonoBehaviour
     [SerializeField] protected string attackAnimationTrigger = "Attack";
 
     protected Animator animator;
-    protected float lastAttackTime;
-    protected bool isInAttackRange;
     protected Transform targetTransform;
     protected ActorBase lastAttackedActor;
 
@@ -89,6 +71,15 @@ public class ActorBase : MonoBehaviour
             // expBar.UpdateExpBarImmediate(curExpValue);
         }
 
+        if (weapon != null)
+        {
+            weapon.SetOwner(this);
+            //if (targetTransform != null)
+            //{
+            //    weapon.SetTarget(targetTransform.gameObject);
+            //}
+        }
+
         if (useAnimation)
         {
             animator = GetComponent<Animator>();
@@ -102,41 +93,6 @@ public class ActorBase : MonoBehaviour
         healthBar.UpdateHealth(currentHealth);
     }
     #endregion
-
-    protected virtual void Attack()
-    {
-        if (useAnimation)
-        {
-            animator.SetTrigger(attackAnimationTrigger);
-        }
-
-        if (bulletPrefab != null)
-        {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            BulletBase bulletComponent = bullet.GetComponent<BulletBase>();
-            if (bulletComponent != null)
-            {
-                bulletComponent.actorType = actorType;
-                bulletComponent.owner = this;   
-                bulletComponent.targetType = GameMain.Instance.GetTargeType(actorType);
-                Vector3 direction = (targetTransform.position - transform.position).normalized;
-                bulletComponent.Initialize(direction, bulletSpeed, damage);
-            }
-        }
-    }
-
-    protected bool CheckAndAttack(float distanceToTarget)
-    {
-        isInAttackRange = distanceToTarget <= attackRange;
-
-        if (isInAttackRange && GameMain.GlobalTime >= lastAttackTime + attackCooldown)
-        {
-            Attack();
-            lastAttackTime = GameMain.GlobalTime;
-            return true;
-        }
-        return false;
-    }
 
     //TOFix:连升多级的情况
     public virtual void GetExp(float exp)
