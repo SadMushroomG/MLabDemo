@@ -113,6 +113,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: pb_Actor_blue
       objectReference: {fileID: 0}
+    - target: {fileID: 3798176617779959439, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4776213939698129018, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e7b44125fb674c946b82a171f5b8e9d4,
+        type: 3}
     - target: {fileID: 8598151063753775267, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: m_LocalPosition.x
