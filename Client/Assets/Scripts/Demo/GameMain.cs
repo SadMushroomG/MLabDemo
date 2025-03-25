@@ -17,11 +17,13 @@ public class GameMain : MonoBehaviour
     [LabelText("蓝方Data")]
     public PlayerDataManager bluePlayerData;   
 
-    public int initActorCount = 5;  
+    public int initActorCount = 5;
+
+    public Transform bulletRoot;
 
     private bool isGameing = false;
-    public static float GlobalTime = 0;
-    public static float DeltaTime = 0;
+    public static float globalTime = 0;
+    public static float deltaTime = 0;
 
     public static GameMain Instance
     {
@@ -35,6 +37,7 @@ public class GameMain : MonoBehaviour
         }
     }
     private static GameMain instance;
+
 
     public Transform GetTransformTarget(MLabActorType type)
     {
@@ -56,8 +59,8 @@ public class GameMain : MonoBehaviour
             case MLabActorType.SpwanA:
                 return MLabActorType.PlayerB;
             case MLabActorType.SpwanB:
-                return MLabActorType.PlayerA;
-            case MLabActorType.PlayerA:
+                return MLabActorType.chessRed;
+            case MLabActorType.chessRed:
                 return MLabActorType.SpwanB;
             case MLabActorType.PlayerB:
                 return MLabActorType.SpwanA;
@@ -76,8 +79,8 @@ public class GameMain : MonoBehaviour
     {
         if (isGameing)
         {
-            GlobalTime += Time.deltaTime;
-            DeltaTime = Time.deltaTime;
+            globalTime += Time.deltaTime;
+            deltaTime = Time.deltaTime;
         }
         CheckGameOver();
     }
@@ -86,7 +89,7 @@ public class GameMain : MonoBehaviour
     {
         for (int i = 0; i < initActorCount; i++)
         {
-            ActorManager.Instance.SpawnActor(MLabActorType.PlayerA);
+            ActorManager.Instance.SpawnActor(MLabActorType.chessRed);
             ActorManager.Instance.SpawnActor(MLabActorType.PlayerB);
         }
     }
@@ -103,5 +106,10 @@ public class GameMain : MonoBehaviour
             Debug.Log("红方胜利");
             isGameing = false;  
         }
+    }
+
+    public static Transform GetBulletRoot()
+    { 
+        return Instance.bulletRoot;
     }
 }

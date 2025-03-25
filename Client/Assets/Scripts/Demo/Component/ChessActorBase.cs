@@ -36,10 +36,11 @@ public class ChessActorBase : ActorBase
         float distanceToTarget = directionToTarget.magnitude;
 
         // Check attack condition using base class method
-        bool attacked = CheckAndAttack(distanceToTarget);
+        bool attacked = weapon.attacked;
 
         // Move if not in attack range and not attacked this frame
-        if (distanceToTarget > stopDistance && !isInAttackRange && !attacked)
+        float stopDistance = Mathf.Max(this.stopDistance, weapon.attackRange);
+        if (distanceToTarget > stopDistance  && !attacked)
         {
             Vector3 normalizedDirection = directionToTarget.normalized;
 
@@ -55,7 +56,7 @@ public class ChessActorBase : ActorBase
             }
             else
             {
-                transform.position += normalizedDirection * moveSpeed * GameMain.DeltaTime;
+                transform.position += normalizedDirection * moveSpeed * GameMain.deltaTime;
             }
 
             if (faceTarget)

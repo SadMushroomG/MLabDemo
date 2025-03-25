@@ -5,7 +5,7 @@ using UnityEngine;
 public enum MLabActorType
 {
     None,
-    PlayerA,
+    chessRed,
     PlayerB,
     SpwanA,
     SpwanB, 
