@@ -61,6 +61,7 @@ public class BulletBase : MonoBehaviour
             actor.TakeDamage(bulletDamage);
             actor.SetLastAttackedActor(GetComponentInParent<WeaponBase>()?.GetOwner());
             Weapon.OnBulletHit(this);
+            JumpWordHelper.Instance.GenerateJumpWord(actorType, bulletDamage.ToString(), actor.transform.position + Vector3.up * 0.5f);
             Destroy(gameObject);
         }
     }
