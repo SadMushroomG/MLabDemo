@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1a8dc494b957cdc40998f44cb806e24b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - oriSprite: {instanceID: 0}
+  - blurShader: {fileID: 4800000, guid: 4e8837662c509584eaa0c48cf22cda2f, type: 3}
+  - displayShader: {fileID: 4800000, guid: 0c181977440ddb544bf170936465978f, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
