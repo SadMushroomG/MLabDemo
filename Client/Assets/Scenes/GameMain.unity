@@ -1280,6 +1280,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6128778813336378319, guid: 2b66804addd0fe9449ede25673b3528e,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128778813336378319, guid: 2b66804addd0fe9449ede25673b3528e,
+        type: 3}
       propertyPath: m_TagString
       value: SpwanA
       objectReference: {fileID: 0}

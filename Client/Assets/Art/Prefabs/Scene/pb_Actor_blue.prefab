@@ -48,6 +48,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: e7b44125fb674c946b82a171f5b8e9d4,
         type: 3}
+    - target: {fileID: 3146933041606484006, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.6320754
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146933041606484006, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5016468
+      objectReference: {fileID: 0}
+    - target: {fileID: 3146933041606484006, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.39057493
+      objectReference: {fileID: 0}
     - target: {fileID: 3778699638639546089, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: weapon
@@ -146,6 +161,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 151e9cdf47bc0774696eaec106781201,
         type: 3}
+    - target: {fileID: 5590157948884427769, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.6320754
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590157948884427769, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5016468
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590157948884427769, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.39057493
+      objectReference: {fileID: 0}
     - target: {fileID: 7270255146402554238, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: m_LocalScale.x
