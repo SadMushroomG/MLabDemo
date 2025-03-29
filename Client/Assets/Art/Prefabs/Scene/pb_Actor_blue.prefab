@@ -12,6 +12,16 @@ PrefabInstance:
       propertyPath: m_Simulated
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 160755383718473598, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1422262773203096000, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b057170126992444a976f956e3cb7cd4, type: 2}
     - target: {fileID: 2836413651653245868, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: healthGradient.key0.b
@@ -32,6 +42,12 @@ PrefabInstance:
       propertyPath: healthGradient.key1.r
       value: 0.3042903
       objectReference: {fileID: 0}
+    - target: {fileID: 3146933041606484006, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e7b44125fb674c946b82a171f5b8e9d4,
+        type: 3}
     - target: {fileID: 3778699638639546089, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: weapon
@@ -113,11 +129,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: pb_Actor_blue
       objectReference: {fileID: 0}
-    - target: {fileID: 3798176617779959439, guid: c1abf6da1fce56b47abd2387a0d206bb,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: -0.13
-      objectReference: {fileID: 0}
     - target: {fileID: 4776213939698129018, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: m_Sprite
@@ -128,6 +139,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5590157948884427769, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 151e9cdf47bc0774696eaec106781201,
+        type: 3}
+    - target: {fileID: 7270255146402554238, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7270255146402554238, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.554
       objectReference: {fileID: 0}
     - target: {fileID: 8598151063753775267, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
