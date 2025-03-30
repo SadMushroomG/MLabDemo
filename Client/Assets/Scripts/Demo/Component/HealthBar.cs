@@ -54,7 +54,7 @@ public class HealthBar : MonoBehaviour
         // 平滑过渡到目标填充量
         if (currentFillAmount != targetFillAmount)
         {
-            currentFillAmount = Mathf.Lerp(currentFillAmount, targetFillAmount, Time.deltaTime * fillSpeed);
+            currentFillAmount = Mathf.Lerp(currentFillAmount, targetFillAmount, GameMain.deltaTime * fillSpeed);
             healthBarImage.transform.localScale = new Vector3(currentFillAmount * originSriteRendererWidth, healthBarImage.transform.localScale.y, healthBarImage.transform.localScale.z);
         }
     }

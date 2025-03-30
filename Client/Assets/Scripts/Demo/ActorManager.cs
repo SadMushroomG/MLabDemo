@@ -11,7 +11,7 @@ public class ActorManager : MonoBehaviour
     {
         get
         {
-            if(instance == null)
+            if (instance == null)
             {
                 instance = FindObjectOfType<ActorManager>();
             }
@@ -37,9 +37,47 @@ public class ActorManager : MonoBehaviour
 
     public List<GameObject> redActorList = new List<GameObject>();
     public List<GameObject> blueActorList = new List<GameObject>();
-    
-    private int redSpawnCount = 0; 
-    private int blueSpawnCount = 0; 
+
+
+
+    public GameObject redSeed;
+    public GameObject blueSeed;
+
+    public enum SeedStateEnum
+    { 
+        Moving,
+        Pin
+    }
+
+    public class seedData
+    {
+        public GameObject seed;
+        public float lifeTime;
+        public Vector3 pinOffset;
+        public SeedStateEnum state;
+    }
+
+    public List<seedData> redSeedList = new List<seedData>();
+    public List<seedData> blueSeedList = new List<seedData>();
+
+
+    private int redSpawnCount = 0;
+    private int blueSpawnCount = 0;
+    private Transform seedRoot;
+
+
+    [BoxGroup("Seed动画设置")]
+    [LabelText("移动到Circle时间")]
+    public float moveToCircleTime = 1f;
+
+    [BoxGroup("Seed动画设置")]
+    [LabelText("Seed移动速度")]
+    public float moveToCircleSpeed = 100f;
+
+    [BoxGroup("Seed动画设置")]
+    [LabelText("Seed Pin 阈值")]
+    public float insertToCircleThreshold = 0.02f;
+
 
     void Awake()
     {
@@ -50,22 +88,124 @@ public class ActorManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(redSpawnCount > 0)
+        if (redSpawnCount > 0)
         {
-            for(int i = 0; i < redSpawnCount; i++)
+            for (int i = 0; i < redSpawnCount; i++)
             {
                 SpawnActor(MLabActorType.chessRed);
             }
             redSpawnCount = 0;
         }
 
-        if(blueSpawnCount > 0)
+        if (blueSpawnCount > 0)
         {
-            for(int i = 0; i < blueSpawnCount; i++)
+            for (int i = 0; i < blueSpawnCount; i++)
             {
                 SpawnActor(MLabActorType.PlayerB);
             }
             blueSpawnCount = 0;
+        }
+
+        if (redSeedList.Count > 0)
+        {
+            for (int i = 0; i < redSeedList.Count; i++)
+            {
+                var data = redSeedList[i];
+                //redSeedList[i].lifeTime -= Time.deltaTime;
+                var curOffset = data.seed.transform.position - GameMain.Instance.blueSpawn.transform.position;
+
+                if ( data.state == SeedStateEnum.Moving)
+                { 
+                    if (Mathf.Abs(curOffset.magnitude - GameMain.Instance.blueSpawn.recycleCircleRadius) < insertToCircleThreshold)
+                    {
+                        data.state = SeedStateEnum.Pin;
+                        data.pinOffset = curOffset;
+                        var animator = data.seed.GetComponent<Animation>();
+                        animator.Play("anim_seed_split");
+                        data.lifeTime = 0.4f;
+                    }
+                    else
+                    {
+                        var targetPos = GameMain.Instance.blueSpawn.transform.position + curOffset.normalized * GameMain.Instance.blueSpawn.recycleCircleRadius;
+                        var dir2 = targetPos - redSeedList[i].seed.transform.position;
+                        redSeedList[i].seed.transform.position += dir2.normalized * GameMain.deltaTime * moveToCircleSpeed;
+                    }
+                }
+                else
+                { 
+                    data.seed.transform.position = GameMain.Instance.blueSpawn.transform.position + data.pinOffset;
+                    data.lifeTime -= GameMain.deltaTime;
+                    if (data.lifeTime <= 0)
+                    {
+                        var pos0 = data.seed.transform.GetChild(1).transform.position;
+                        var pos1 = data.seed.transform.GetChild(2).transform.position;
+                        SpawnActor(MLabActorType.PlayerB, pos0);
+                        SpawnActor(MLabActorType.PlayerB, pos1);
+                        GameObject.Destroy(data.seed);
+                        redSeedList.RemoveAt(i);
+                        i--;
+                    }
+                }
+            }
+        }
+
+        if (blueSeedList.Count > 0)
+        {
+            for (int i = 0; i < blueSeedList.Count; i++)
+            {
+                var data = blueSeedList[i];
+                //redSeedList[i].lifeTime -= Time.deltaTime;
+                var curOffset = data.seed.transform.position - GameMain.Instance.redSpawn.transform.position;
+
+                if (data.state == SeedStateEnum.Moving)
+                {
+                    if (Mathf.Abs(curOffset.magnitude - GameMain.Instance.redSpawn.recycleCircleRadius) < insertToCircleThreshold)
+                    {
+                        data.state = SeedStateEnum.Pin;
+                        data.pinOffset = curOffset;
+                        var animator = data.seed.GetComponent<Animation>();
+                        animator.Play("anim_seed_split");
+                        data.lifeTime = 0.4f;
+                    }
+                    else
+                    {
+                        var targetPos = GameMain.Instance.redSpawn.transform.position + curOffset.normalized * GameMain.Instance.redSpawn.recycleCircleRadius;
+                        var dir2 = targetPos - redSeedList[i].seed.transform.position;
+                        redSeedList[i].seed.transform.position += dir2.normalized * GameMain.deltaTime * moveToCircleSpeed;
+                    }
+                }
+                else
+                {
+                    data.seed.transform.position = GameMain.Instance.redSpawn.transform.position + data.pinOffset;
+                    data.lifeTime -= GameMain.deltaTime;
+                    if (data.lifeTime <= 0)
+                    {
+                        var pos0 = data.seed.transform.GetChild(1).transform.position;
+                        var pos1 = data.seed.transform.GetChild(2).transform.position;
+                        SpawnActor(MLabActorType.chessRed, pos0);
+                        SpawnActor(MLabActorType.chessRed, pos1);
+                        GameObject.Destroy(data.seed);
+                        blueSeedList.RemoveAt(i);
+                        i--;
+                    }
+                }
+            }
+        }
+    }
+
+    public void SpawnActor(MLabActorType actorType, Vector3 targetPosition)
+    {
+        GameObject actor = actorType == MLabActorType.chessRed ? actorRed : actorBlue;
+
+        var instance = Instantiate(actor, targetPosition, Quaternion.identity);
+
+        if (actorType == MLabActorType.PlayerB)
+        {
+            blueActorList.Add(instance);
+        }
+        else
+        {
+            redActorList.Add(instance);
         }
     }
 
@@ -88,7 +228,7 @@ public class ActorManager : MonoBehaviour
         var random = Random.insideUnitCircle * spawnAreaRadius;
         position.x += random.x;
         position.y += random.y;
-        
+
         var instance = Instantiate(actor, position, Quaternion.identity);
 
         if (actorType == MLabActorType.PlayerB)
@@ -96,17 +236,19 @@ public class ActorManager : MonoBehaviour
             blueActorList.Add(instance);
         }
         else
-        { 
+        {
             redActorList.Add(instance);
         }
     }
 
     public void RemoveActor(GameObject actor, MLabActorType actorType)
     {
-        if(actorType == MLabActorType.chessRed)
+        if (actorType == MLabActorType.chessRed)
         {
             GameMain.Instance.blueSpawn.GetExp(actor.GetComponent<ActorBase>().expValue);
             redActorList.Remove(actor);
+
+            AddSeed(actorType, actor.transform.position);
             blueSpawnCount += 2;
         }
         else
@@ -117,6 +259,40 @@ public class ActorManager : MonoBehaviour
         }
         Destroy(actor);
     }
+
+
+    public void AddSeed(MLabActorType actorType, Vector2 startPosition)
+    { 
+        if(seedRoot == null)
+        {
+            var root = new GameObject("seed_root");
+            root.transform.parent = transform;
+        }
+
+        var seed = actorType == MLabActorType.chessRed ? redSeed : blueSeed;
+        var go = Instantiate(seed, seedRoot);
+        go.transform.position = startPosition;
+
+        if (actorType == MLabActorType.chessRed)
+        {
+            redSeedList.Add(new seedData
+            {
+                seed = go,
+                lifeTime = 5f,
+                state = SeedStateEnum.Moving
+            });
+        }
+        else if (actorType == MLabActorType.PlayerB)
+        {
+            blueSeedList.Add(new seedData
+            {
+                seed = go,
+                lifeTime = 5f,
+                state = SeedStateEnum.Moving
+            });
+        }
+    }
+
 
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()

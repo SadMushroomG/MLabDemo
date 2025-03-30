@@ -89,7 +89,7 @@ public class JumpWordHelper : MonoBehaviour
         for (int i = 0; i < jumpWordRecords.Count; i++)
         {
             JumpWordRecord record = jumpWordRecords[i];
-            record.lifeTime -= Time.deltaTime;
+            record.lifeTime -= GameMain.deltaTime;
             if (record.lifeTime <= 0)
             {
                 Destroy(record.jumpWord);
