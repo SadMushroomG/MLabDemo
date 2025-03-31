@@ -170,8 +170,8 @@ public class ActorManager : MonoBehaviour
                     else
                     {
                         var targetPos = GameMain.Instance.redSpawn.transform.position + curOffset.normalized * GameMain.Instance.redSpawn.recycleCircleRadius;
-                        var dir2 = targetPos - redSeedList[i].seed.transform.position;
-                        redSeedList[i].seed.transform.position += dir2.normalized * GameMain.deltaTime * moveToCircleSpeed;
+                        var dir2 = targetPos - blueSeedList[i].seed.transform.position;
+                        blueSeedList[i].seed.transform.position += dir2.normalized * GameMain.deltaTime * moveToCircleSpeed;
                     }
                 }
                 else
@@ -249,13 +249,15 @@ public class ActorManager : MonoBehaviour
             redActorList.Remove(actor);
 
             AddSeed(actorType, actor.transform.position);
-            blueSpawnCount += 2;
+            //blueSpawnCount += 2;
         }
         else
         {
             GameMain.Instance.redSpawn.GetExp(actor.GetComponent<ActorBase>().expValue);
             blueActorList.Remove(actor);
-            redSpawnCount += 2;
+
+            AddSeed(actorType, actor.transform.position);
+            //redSpawnCount += 2;
         }
         Destroy(actor);
     }

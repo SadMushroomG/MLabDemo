@@ -19,7 +19,16 @@ public class PlayerMovementController : MonoBehaviour
 
     public float moveSpeed = 5f; // 移动速度
     public Vector2 moveRangeX = new Vector2(-8, 8); // 移动范围X    
-    public Vector2 moveRangeY = new Vector2(-5, 5); // 移动范围X    
+    public Vector2 moveRangeY = new Vector2(-5, 5); // 移动范围X
+
+
+    public GameObject character1;
+    private Vector3 character1TargetPos;
+
+
+    public GameObject character2;
+    private Vector3 character2TargetPos;
+
     void Update()
     {
         // 获取WASD按键输入

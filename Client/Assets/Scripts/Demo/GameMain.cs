@@ -24,7 +24,7 @@ public class GameMain : MonoBehaviour
 
     public TMP_Text updateTipText;
     private string updateTip = "下次升级 ";
-    private float updateCountDownTime = 30;
+    private float updateCountDownTime = 60;
 
     public enum GameStateEnum
     {
