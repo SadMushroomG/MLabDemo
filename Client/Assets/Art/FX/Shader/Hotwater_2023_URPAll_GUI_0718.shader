@@ -301,7 +301,7 @@ Shader "Hotwater/2023/URPAll_GUI_0718"
 		{
 			
 			Name "Forward"
-			Tags { "LightMode"="UniversalForward" }
+			//Tags { "LightMode"="UniversalForward" }
 			
 			Blend SrcAlpha [_Float1], One OneMinusSrcAlpha
 			ZWrite Off
@@ -320,7 +320,7 @@ Shader "Hotwater/2023/URPAll_GUI_0718"
 			HLSLPROGRAM
 			#pragma multi_compile_instancing
 			#define _RECEIVE_SHADOWS_OFF 1
-			#define ASE_SRP_VERSION 999999
+			//#define ASE_SRP_VERSION 999999
 			#define REQUIRE_DEPTH_TEXTURE 1
 
 			#pragma prefer_hlslcc gles
