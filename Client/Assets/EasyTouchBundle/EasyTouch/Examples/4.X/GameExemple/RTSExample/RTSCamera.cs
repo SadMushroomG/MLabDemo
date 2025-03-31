@@ -37,7 +37,7 @@ public class RTSCamera : MonoBehaviour {
 	}
 
 	void On_Pinch (Gesture gesture){	
-		Camera.main.fieldOfView += gesture.deltaPinch * Time.deltaTime;
+		Camera.main.fieldOfView += gesture.deltaPinch * GameMain.deltaTime;
 	}
 
 }

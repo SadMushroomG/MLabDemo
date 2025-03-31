@@ -30,7 +30,7 @@ public class PlayerMovementController : MonoBehaviour
         Vector2 movement = new Vector2(moveX, moveY);
 
         // 归一化移动向量以防止斜向移动速度过快
-        movement = movement * moveSpeed * Time.deltaTime;
+        movement = movement * moveSpeed * GameMain.deltaTime;
         
 
         if (movementAreaType == MovementAreaType.Rectangle)

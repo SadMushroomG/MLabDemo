@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildingBase : ActorBase
 {
+    public float recycleCircleRadius = 5f;
 
     public override void Awake()
     {
@@ -42,5 +43,11 @@ public class BuildingBase : ActorBase
         {
             GameMain.Instance.CheckGameOver();
         }
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, recycleCircleRadius);
     }
 }

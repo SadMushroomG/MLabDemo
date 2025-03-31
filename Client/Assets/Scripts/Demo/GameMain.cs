@@ -1,6 +1,7 @@
 using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameMain : MonoBehaviour
@@ -21,6 +22,17 @@ public class GameMain : MonoBehaviour
 
     public Transform bulletRoot;
 
+    public TMP_Text updateTipText;
+    private string updateTip = "下次升级 ";
+    private float updateCountDownTime = 30;
+
+    public enum GameStateEnum
+    {
+        Gameing,
+        Pause,
+        GameOver,
+    }
+    public GameStateEnum gameState;
     private bool isGameing = false;
     public static float globalTime = 0;
     public static float deltaTime = 0;
@@ -38,6 +50,11 @@ public class GameMain : MonoBehaviour
     }
     private static GameMain instance;
 
+    private Dictionary<string, BaseViewController> controllerDic = new();
+    private List<BaseViewController> controllerList = new();
+
+    [LabelText("UIRoot")]
+    public GameObject uiRoot;
 
     public Transform GetTransformTarget(MLabActorType type)
     {
@@ -72,15 +89,36 @@ public class GameMain : MonoBehaviour
     void Awake()
     {
         instance = this;
-        isGameing = true;
+        //isGameing = true;
+        gameState = GameStateEnum.Gameing;
+        InitModules();
     }
 
     void Update()
     {
-        if (isGameing)
+        if (gameState == GameStateEnum.Gameing)
         {
             globalTime += Time.deltaTime;
             deltaTime = Time.deltaTime;
+
+            updateCountDownTime -= deltaTime;
+
+            if (updateCountDownTime <= 0)
+            {
+                gameState = GameStateEnum.Pause;
+                if(controllerDic.ContainsKey("CardPoolViewContoller"))
+                {
+                    controllerDic["CardPoolViewContoller"].Show();
+                }
+            }
+            else
+            {
+                updateTipText.text = updateTip + (int)updateCountDownTime;
+            }
+        }
+        else
+        {
+            deltaTime = 0f;
         }
         CheckGameOver();
     }
@@ -99,17 +137,25 @@ public class GameMain : MonoBehaviour
         if (redSpawn.currentHealth <= 0)
         {
             Debug.Log("蓝方胜利");
-            isGameing = false;  
+            gameState = GameStateEnum.GameOver;  
         }
         else if (blueSpawn.currentHealth <= 0)
         {
             Debug.Log("红方胜利");
-            isGameing = false;  
+            gameState = GameStateEnum.GameOver;  
         }
     }
 
     public static Transform GetBulletRoot()
     { 
         return Instance.bulletRoot;
+    }
+
+    private void InitModules()
+    {
+        var controller = new CardPoolViewContoller();
+        controller.Init();
+
+        controllerDic.Add(controller.moduleName, controller);
     }
 }
