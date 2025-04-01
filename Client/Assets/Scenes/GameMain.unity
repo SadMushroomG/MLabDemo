@@ -591,7 +591,7 @@ MonoBehaviour:
   curExpValue: 0
   curExpMaxValue: 100
   expValue: 1
-  weapon: {fileID: 0}
+  weapons: []
   useAnimation: 0
   attackAnimationTrigger: Attack
   curState: 0
@@ -863,6 +863,18 @@ MonoBehaviour:
   swipeSpeed: 20
   cameraRangeXMin: 0
   cameraRangeXMax: 18
+--- !u!114 &336599005 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3599736868561910759, guid: 2b66804addd0fe9449ede25673b3528e,
+    type: 3}
+  m_PrefabInstance: {fileID: 780563827}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20de31ed1a348534e961649d943252cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &390091049
 GameObject:
   m_ObjectHideFlags: 0
@@ -1189,7 +1201,7 @@ MonoBehaviour:
   curExpValue: 0
   curExpMaxValue: 100
   expValue: 1
-  weapon: {fileID: 0}
+  weapons: []
   useAnimation: 0
   attackAnimationTrigger: Attack
   curState: 0
@@ -1459,7 +1471,7 @@ MonoBehaviour:
   curExpValue: 0
   curExpMaxValue: 100
   expValue: 1
-  weapon: {fileID: 1112503981}
+  weapons: []
   useAnimation: 0
   attackAnimationTrigger: Attack
   recycleCircleRadius: 5
@@ -1599,9 +1611,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6128778813336378312, guid: 2b66804addd0fe9449ede25673b3528e,
         type: 3}
+      propertyPath: weapons.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128778813336378312, guid: 2b66804addd0fe9449ede25673b3528e,
+        type: 3}
       propertyPath: recycleCircleRadius
       value: 1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 6128778813336378312, guid: 2b66804addd0fe9449ede25673b3528e,
+        type: 3}
+      propertyPath: weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 336599005}
+    - target: {fileID: 6128778813336378312, guid: 2b66804addd0fe9449ede25673b3528e,
+        type: 3}
+      propertyPath: weapons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1662214028}
     - target: {fileID: 6128778813336378313, guid: 2b66804addd0fe9449ede25673b3528e,
         type: 3}
       propertyPath: m_RootOrder
@@ -1703,6 +1730,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: img_character
       objectReference: {fileID: 0}
+    - target: {fileID: 7741332871460492467, guid: 2b66804addd0fe9449ede25673b3528e,
+        type: 3}
+      propertyPath: m_Name
+      value: WeaponBase
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1726,6 +1758,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1343640118}
+    - targetCorrespondingSourceObject: {fileID: 2915013271434294138, guid: 2b66804addd0fe9449ede25673b3528e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1662214027}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6128778813336378319, guid: 2b66804addd0fe9449ede25673b3528e,
         type: 3}
@@ -1786,9 +1822,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6128778813336378312, guid: 2b66804addd0fe9449ede25673b3528e,
         type: 3}
+      propertyPath: weapons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128778813336378312, guid: 2b66804addd0fe9449ede25673b3528e,
+        type: 3}
       propertyPath: recycleCircleRadius
       value: 1.31
       objectReference: {fileID: 0}
+    - target: {fileID: 6128778813336378312, guid: 2b66804addd0fe9449ede25673b3528e,
+        type: 3}
+      propertyPath: weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1443450300}
     - target: {fileID: 6128778813336378313, guid: 2b66804addd0fe9449ede25673b3528e,
         type: 3}
       propertyPath: m_RootOrder
@@ -1863,6 +1909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: SpwanA
+      objectReference: {fileID: 0}
+    - target: {fileID: 7741332871460492467, guid: 2b66804addd0fe9449ede25673b3528e,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3091,18 +3142,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1112503981 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3599736868561910759, guid: aa6e41352f452304a92c1defac58819b,
-    type: 3}
-  m_PrefabInstance: {fileID: 58422691}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20de31ed1a348534e961649d943252cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1245913152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3851,6 +3890,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1443450300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3599736868561910759, guid: 2b66804addd0fe9449ede25673b3528e,
+    type: 3}
+  m_PrefabInstance: {fileID: 820395625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20de31ed1a348534e961649d943252cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1446412651
 GameObject:
   m_ObjectHideFlags: 0
@@ -4185,6 +4236,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626756140}
   m_CullTransparentMesh: 1
+--- !u!1 &1662214026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1662214027}
+  - component: {fileID: 1662214028}
+  m_Layer: 0
+  m_Name: WeaponFireBall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1662214027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662214026}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1999814739}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1662214028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662214026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 569c47d2ab239b046809de082a8cf1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 50
+  attackRange: 10
+  attackCooldown: 5
+  bulletSpeed: 1
+  attackEffectPrefab: {fileID: 783463981584913138, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+    type: 3}
+  effectDuration: 0.5
+  target: {fileID: 0}
+  targetType: 0
+  attacked: 0
+  detectionRadius: 10
+  targetUpdateInterval: 0.5
+  fireBallScale: 1.5
+  explosionRadius: 3
 --- !u!1 &1752411857
 GameObject:
   m_ObjectHideFlags: 0
@@ -4475,6 +4584,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1927480977}
   m_CullTransparentMesh: 1
+--- !u!4 &1999814739 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2915013271434294138, guid: 2b66804addd0fe9449ede25673b3528e,
+    type: 3}
+  m_PrefabInstance: {fileID: 780563827}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2061659724
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,7 +42,7 @@ public class ActorBase : MonoBehaviour
 
     [BoxGroup("攻击")]
     [LabelText("武器")]
-    [SerializeField] protected WeaponBase weapon;
+    [SerializeField] public List<WeaponBase> weapons;
 
     [BoxGroup("动画")]
     [LabelText("使用动画")]
@@ -55,6 +55,18 @@ public class ActorBase : MonoBehaviour
     protected Animator animator;
     protected Transform targetTransform;
     protected ActorBase lastAttackedActor;
+
+    public bool IsAttackedThisFrame()
+    {
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            if (weapons[i].attacked)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public virtual void Awake()
     {
@@ -71,13 +83,13 @@ public class ActorBase : MonoBehaviour
             // expBar.UpdateExpBarImmediate(curExpValue);
         }
 
-        if (weapon != null)
+        for (int i = 0; i < weapons.Count; i++)
         {
-            weapon.SetOwner(this);
-            //if (targetTransform != null)
-            //{
-            //    weapon.SetTarget(targetTransform.gameObject);
-            //}
+            WeaponBase weapon = weapons[i];
+            if (weapon != null)
+            {
+                weapon.SetOwner(this);
+            }
         }
 
         if (useAnimation)

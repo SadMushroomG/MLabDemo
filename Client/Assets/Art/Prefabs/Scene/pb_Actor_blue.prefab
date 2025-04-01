@@ -78,6 +78,16 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3778699638639546089, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: weapons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778699638639546089, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: weapons.Array.data[0]
+      value: 
+      objectReference: {fileID: 7183411516681977261}
     - target: {fileID: 3778699638639546090, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: m_RootOrder

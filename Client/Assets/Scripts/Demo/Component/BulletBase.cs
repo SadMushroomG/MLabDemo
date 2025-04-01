@@ -5,11 +5,11 @@ public class BulletBase : MonoBehaviour
     public MLabActorType actorType;
     public MLabActorType targetType;
 
-    private WeaponBase Weapon;
-    protected GameObject target;
-    protected float speed;
-    private float bulletDamage;
-    protected float lifetime = 5f; // Bullet will be destroyed after 5 seconds
+    protected WeaponBase Weapon;
+    public GameObject target;
+    public float speed;
+    public float bulletDamage;
+    public float lifetime = 5f; // Bullet will be destroyed after 5 seconds
 
     public virtual void Initialize(GameObject target, float spd, float dmg, MLabActorType actorType, WeaponBase weapon)
     {
@@ -60,9 +60,12 @@ public class BulletBase : MonoBehaviour
             //DamageCalculator.Instance.CalculateDamage(this, target.GetComponent<ActorBase>());
             actor.TakeDamage(bulletDamage);
             actor.SetLastAttackedActor(GetComponentInParent<WeaponBase>()?.GetOwner());
-            Weapon.OnBulletHit(this);
             JumpWordHelper.Instance.GenerateJumpWord(actorType, bulletDamage.ToString(), actor.transform.position + Vector3.up * 0.5f);
-            Destroy(gameObject);
+            //看是不是只能造成一次伤害的武器发出的子弹
+            if (Weapon.OnBulletHit(this))
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

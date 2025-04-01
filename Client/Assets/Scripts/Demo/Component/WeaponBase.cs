@@ -29,13 +29,13 @@ public class WeaponBase : MonoBehaviour
     [LabelText("检测更新间隔")]
     public float targetUpdateInterval = 0.5f;
 
-    private float lastUpdateTime;
-    private float lastAttackTime;
+    protected float lastUpdateTime;
+    protected float lastAttackTime;
 
     protected bool isInAttackRange;
 
     //发射出去的东西
-    private List<BulletBase> bulletList = new List<BulletBase>();
+    protected List<BulletBase> bulletList = new List<BulletBase>();
 
     public void Awake()
     {
@@ -89,9 +89,15 @@ public class WeaponBase : MonoBehaviour
         }
     }
 
-    public void OnBulletHit(BulletBase bullet)
+    /// <summary>
+    /// 返回是否销毁子弹
+    /// </summary>
+    /// <param name="bullet"></param>
+    /// <returns></returns>
+    public virtual bool OnBulletHit(BulletBase bullet)
     {
         bulletList.Remove(bullet);
+        return true;
     }
 
     public virtual void Attack()
@@ -117,7 +123,7 @@ public class WeaponBase : MonoBehaviour
         */
     }
 
-    private void Update()
+    protected void Update()
     {
         // 定期更新目标
         if ((GameMain.globalTime - lastUpdateTime) >= targetUpdateInterval || target == null)
@@ -134,7 +140,7 @@ public class WeaponBase : MonoBehaviour
         }
     }
 
-    protected bool CheckAndAttack(float distanceToTarget)
+    protected virtual bool CheckAndAttack(float distanceToTarget)
     {
         isInAttackRange = distanceToTarget <= attackRange;
 
