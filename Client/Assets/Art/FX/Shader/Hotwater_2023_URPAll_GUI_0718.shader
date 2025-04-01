@@ -301,7 +301,7 @@ Shader "Hotwater/2023/URPAll_GUI_0718"
 		{
 			
 			Name "Forward"
-			//Tags { "LightMode"="UniversalForward" }
+			Tags { "LightMode"="UniversalForward" }
 			
 			Blend SrcAlpha [_Float1], One OneMinusSrcAlpha
 			ZWrite Off
