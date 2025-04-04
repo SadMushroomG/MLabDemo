@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: 3778699638639546089, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: moveSpeed
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3778699638639546089, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
@@ -254,6 +254,8 @@ MonoBehaviour:
   attackRange: 3
   attackCooldown: 2
   bulletSpeed: 1.5
+  critRate: 0.05
+  critDamage: 1.2
   attackEffectPrefab: {fileID: 7695393459228443414, guid: 10affea1a5c157241aa8e0355551629b,
     type: 3}
   effectDuration: 0.5

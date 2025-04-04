@@ -50,7 +50,7 @@ public class ChessActorBase : ActorBase
                     transform.position,
                     targetTransform.position,
                     ref currentVelocity,
-                    0.3f,
+                    0.3f * GameMain.deltaTime,
                     moveSpeed
                 );
             }

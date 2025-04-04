@@ -1293,9 +1293,15 @@ MonoBehaviour:
   jumpWordHero:
     prefab: {fileID: 135949724477073444, guid: 7db14a5adf5f39c4fb2351062d82da36, type: 3}
     lifeTime: 1
+  jumpWordHeroCrit:
+    prefab: {fileID: 135949724477073444, guid: 236b5861bbba7734596cae28c75cf6d9, type: 3}
+    lifeTime: 1.5
   jumpWordEnemy:
     prefab: {fileID: 135949724477073444, guid: 41b6a4f459c5bbf44a310cd0477e053f, type: 3}
     lifeTime: 1
+  jumpWordEnemyCrit:
+    prefab: {fileID: 135949724477073444, guid: 27ef446fba215c449bbe8ed7863fbd4f, type: 3}
+    lifeTime: 1.5
   jumpWordRoot: {fileID: 390091050}
 --- !u!1 &408665531
 GameObject:
@@ -5748,6 +5754,8 @@ MonoBehaviour:
   attackRange: 2
   attackCooldown: 1
   bulletSpeed: 1
+  critRate: 0.05
+  critDamage: 1.2
   attackEffectPrefab: {fileID: 0}
   effectDuration: 0.5
   target: {fileID: 0}
@@ -6096,6 +6104,8 @@ MonoBehaviour:
   attackRange: 10
   attackCooldown: 5
   bulletSpeed: 1
+  critRate: 0.05
+  critDamage: 1.2
   attackEffectPrefab: {fileID: 783463981584913138, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
     type: 3}
   effectDuration: 0.5
@@ -6698,9 +6708,9 @@ MonoBehaviour:
   redSeed: {fileID: 191765490178279710, guid: 9b805410b813e354ea8a21470b16bb94, type: 3}
   blueSeed: {fileID: 9209491657276671253, guid: dc0495f2e60d41346bcdb0f22e1fe34a,
     type: 3}
-  moveToCircleTime: 1
-  moveToCircleSpeed: 3
-  insertToCircleThreshold: 0.005
+  moveToCircleTime: 3
+  moveToCircleSpeed: 6
+  insertToCircleThreshold: 0.02
 --- !u!1 &1927480977
 GameObject:
   m_ObjectHideFlags: 0

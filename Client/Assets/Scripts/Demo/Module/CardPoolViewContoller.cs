@@ -20,6 +20,8 @@ public class CardPoolViewContoller : BaseViewController
 
     public override void Show()
     {
+        Time.timeScale = 0f; // 暂停游戏
+
         if (canvasRoot != null)
         {
             canvasRoot.SetActive(true);
@@ -36,6 +38,8 @@ public class CardPoolViewContoller : BaseViewController
 
     public override void Hide()
     {
+        Time.timeScale = 1f; // 暂停游戏
+
         if (canvasRoot != null)
         {
             canvasRoot.SetActive(false);
