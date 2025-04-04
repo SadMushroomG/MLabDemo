@@ -2,6 +2,7 @@ using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 
 public class GameMain : MonoBehaviour
@@ -24,7 +25,7 @@ public class GameMain : MonoBehaviour
 
     public TMP_Text updateTipText;
     private string updateTip = "下次升级 ";
-    private float updateCountDownTime = 60;
+    public float updateCountDownTime = 30;
 
     public enum GameStateEnum
     {
@@ -123,6 +124,12 @@ public class GameMain : MonoBehaviour
         CheckGameOver();
     }
 
+    public void ResumeGame()
+    {
+        gameState = GameStateEnum.Gameing;
+        updateCountDownTime = 30;
+    }
+
     private void Start()
     {
         for (int i = 0; i < initActorCount; i++)
@@ -158,4 +165,21 @@ public class GameMain : MonoBehaviour
 
         controllerDic.Add(controller.moduleName, controller);
     }
+
+
+    #region
+    private static string cardConfigPath = "Assets/Scripts/Demo/Configs/CardDataConfig.asset";
+    private static CardDataConfig cardDataConfig;
+    public static CardDataConfig CardDataConfig
+    {
+        get
+        {
+            if (cardDataConfig == null)
+            {
+                cardDataConfig = AssetDatabase.LoadAssetAtPath<CardDataConfig>(cardConfigPath);
+            }
+            return cardDataConfig;
+        }
+    }
+    #endregion
 }
