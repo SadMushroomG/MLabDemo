@@ -59,8 +59,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.35, y: 1.35, z: 1.35}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5053495795191439499}
   - {fileID: 2291384298070921623}
@@ -196,7 +196,7 @@ MonoBehaviour:
   curExpValue: 0
   curExpMaxValue: 100
   expValue: 1
-  weapon: {fileID: 3599736868561910759}
+  weapons: []
   useAnimation: 0
   attackAnimationTrigger: Attack
   recycleCircleRadius: 5
@@ -332,6 +332,8 @@ MonoBehaviour:
   attackRange: 2
   attackCooldown: 1
   bulletSpeed: 1
+  critRate: 0.05
+  critDamage: 1.2
   attackEffectPrefab: {fileID: 7695393459228443414, guid: e690bbfef9d343b48aea498046d55512,
     type: 3}
   effectDuration: 0.5

@@ -1,0 +1,185 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: mtvx_seed_split_content
+  m_Shader: {fileID: 4800000, guid: 53cfdbabef0ada04dab9b600e906abff, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - UEP_VARIANT_1
+  - UEP_VARIANT_2
+  - UEP_VARIANT_3
+  - UEP_VARIANT_4
+  m_InvalidKeywords:
+  - _BLEND_ALPHABLEND
+  - _DIRECTIONENUM_X
+  - _MASKMODE_ALPHA
+  - _SHOWMAINTEX_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BColorTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DirectionTex:
+        m_Texture: {fileID: 2800000, guid: 80ab8888fc0859347ae69e0a9c5da919, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlashTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GColorTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LineTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RColorTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WarpTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClipThreshold: 0.001
+    - _BColorRotate: 0
+    - _BLineToggle: 0
+    - _BendStrength: 0
+    - _Blend: 0
+    - _BlendOp: 0
+    - _Breath: 0
+    - _ColorMask: 15
+    - _ColorMoveSpdX: 0
+    - _ColorRot: 0
+    - _ColorRotSpd: 0
+    - _ColorTexUsePolar: 0
+    - _ColorTex_Speed_X: 0
+    - _ColorTex_Speed_Y: 0
+    - _Cull: 0
+    - _DiffDirection: 0
+    - _DiffSmoothMax: 0.7
+    - _DiffSmoothMin: 0.3
+    - _Direction: 1
+    - _DirectionEnum: 0
+    - _Dissolve: 1
+    - _DstBlend: 10
+    - _EnableExternalAlpha: 0
+    - _FlashColorMode: 0
+    - _FlashRange: 0.1
+    - _FlashSmooth: 0.1
+    - _GColorRotate: 0
+    - _GLineToggle: 0
+    - _M_Offset_Xspeed: 0
+    - _M_Offset_Yspeed: 0
+    - _M_Rot_Center_X: 0.5
+    - _M_Rot_Center_Y: 0.5
+    - _MainIsMask: 1
+    - _MainPolar: 0
+    - _MainRotate: 0
+    - _MainSpeedX: 0
+    - _MainSpeedY: 0
+    - _MainTexRot: 0
+    - _MainTexRotSpeed: 0
+    - _MainTime: 1
+    - _Mask: 1
+    - _MaskMode: 0
+    - _MaskOnly: 0
+    - _MaskRot: 0
+    - _MaskRotSpeed: 0
+    - _MaskScale: 1
+    - _MaskSmoothstepMax: 1
+    - _MaskSmoothstepMin: 0
+    - _Mask_Offset_Xspeed: 0
+    - _Mask_Offset_Yspeed: 0
+    - _NoisePower: 0
+    - _RColorRotate: 0
+    - _RasAlpha: 0
+    - _ScreenUVScale: 1
+    - _ScreenUVToggle: 0
+    - _ShowMainTex: 1
+    - _SpaceTime: 2
+    - _SrcBlend: 5
+    - _StaticUV: 0
+    - _StaticUVScale: 0.05
+    - _StaticXZToggle: 0
+    - _Stencil: 150
+    - _StencilComp: 3
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _TimeOffset: 0
+    - _TimeSpeed: 1
+    - _TwistStrength: 0
+    - _UseColorTex: 0
+    - _UseMainTex: 1
+    - _UseNoise: 0
+    - _UseUIAlphaClip: 0
+    - _WarpMove: 0.5
+    - _WarpPolar: 0
+    - _WarpRot: 0
+    - _WarpRotSpeed: 0
+    - _Warp_Intensity: 0
+    - _Warp_Offset_Xspeed: 0
+    - _Warp_Offset_Yspeed: 0
+    - _ZTest: 0
+    - _ZWrite: 0
+    m_Colors:
+    - _BLineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BgColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BgDarkColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BreathParam: {r: 0, g: 0, b: 1, a: 1}
+    - _Color: {r: 1, g: 0, b: 0, a: 1}
+    - _DissolveParam: {r: 5, g: 1, b: 0, a: 0.5}
+    - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FlashColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _GLineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Param: {r: 1.52, g: 0, b: 0.5, a: 0.01}
+    - _RLineColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []

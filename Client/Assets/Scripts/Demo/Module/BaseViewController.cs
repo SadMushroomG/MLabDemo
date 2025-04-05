@@ -13,4 +13,12 @@ public class BaseViewController
     public virtual void Show()
     {
     }
+
+    public virtual void Hide()
+    {
+    }
+
+    public virtual void Close()
+    {
+    }
 }

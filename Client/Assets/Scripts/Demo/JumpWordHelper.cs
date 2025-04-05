@@ -33,8 +33,10 @@ public class JumpWordHelper : MonoBehaviour
     }
 
     public JumpWordData jumpWordHero;
+    public JumpWordData jumpWordHeroCrit;
 
     public JumpWordData jumpWordEnemy;
+    public JumpWordData jumpWordEnemyCrit;
 
     public Transform jumpWordRoot;
 
@@ -50,7 +52,7 @@ public class JumpWordHelper : MonoBehaviour
     /// </summary>
     /// <param name="text"></param>
     /// <param name="position"></param>
-    public void GenerateJumpWord(MLabActorType type, string text, Vector2 position)
+    public void GenerateJumpWord(MLabActorType type, string text, Vector2 position, bool isCrit = false)
     {
         GameObject jumpWordObject = null;
         if (type == MLabActorType.chessRed || type == MLabActorType.SpwanA)
@@ -58,16 +60,15 @@ public class JumpWordHelper : MonoBehaviour
             if (jumpWordEnemy == null)
                 return;
 
-            jumpWordObject = Instantiate(jumpWordEnemy.prefab, position, Quaternion.identity);
+            jumpWordObject = isCrit ? Instantiate(jumpWordEnemyCrit.prefab, position, Quaternion.identity) : Instantiate(jumpWordEnemy.prefab, position, Quaternion.identity);
         }
         else if (type == MLabActorType.PlayerB || type == MLabActorType.SpwanB)
         {
             if (jumpWordHero == null)
                 return;
 
-            jumpWordObject = Instantiate(jumpWordHero.prefab, position, Quaternion.identity);
+            jumpWordObject = isCrit ? Instantiate(jumpWordHeroCrit.prefab, position, Quaternion.identity) : Instantiate(jumpWordHero.prefab, position, Quaternion.identity);
         }
-
 
         jumpWordObject.transform.SetParent(jumpWordRoot.transform);
         

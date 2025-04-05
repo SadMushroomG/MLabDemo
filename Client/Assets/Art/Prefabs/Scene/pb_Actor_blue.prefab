@@ -15,7 +15,37 @@ PrefabInstance:
     - target: {fileID: 160755383718473598, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 160755383718473598, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 160755383718473598, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 160755383718473598, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 160755383718473598, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163001554623729730, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164659514643524738, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1422262773203096000, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
@@ -46,7 +76,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: e7b44125fb674c946b82a171f5b8e9d4,
+      objectReference: {fileID: 21300000, guid: 4cce2eb0f11f0744598cfff4c8040cf5,
         type: 3}
     - target: {fileID: 3146933041606484006, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
@@ -76,7 +106,7 @@ PrefabInstance:
     - target: {fileID: 3778699638639546089, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: moveSpeed
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3778699638639546089, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
@@ -190,7 +220,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: b2d5ada2dd1b3dd4ca4ffeb4cba1a7dd,
+      objectReference: {fileID: 21300000, guid: 66c8e88c9aaf592439aa7634a86e3862,
         type: 3}
     - target: {fileID: 7270255146402554238, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
@@ -254,6 +284,8 @@ MonoBehaviour:
   attackRange: 3
   attackCooldown: 2
   bulletSpeed: 1.5
+  critRate: 0.05
+  critDamage: 1.2
   attackEffectPrefab: {fileID: 7695393459228443414, guid: 10affea1a5c157241aa8e0355551629b,
     type: 3}
   effectDuration: 0.5

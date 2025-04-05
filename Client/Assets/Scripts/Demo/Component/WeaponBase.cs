@@ -5,11 +5,29 @@ using UnityEngine;
 
 public class WeaponBase : MonoBehaviour
 {
-    [Header("攻击属性")]
+    [BoxGroup("攻击属性")]
+    [LabelText("伤害")]
     public float damage = 10f;
+
+    [BoxGroup("攻击属性")]
+    [LabelText("攻击范围")]
     public float attackRange = 2f;
+    
+    [BoxGroup("攻击属性")]
+    [LabelText("冷却时间")]
     public float attackCooldown = 1f;
+
+    [BoxGroup("攻击属性")]
+    [LabelText("子弹速度")]
     public float bulletSpeed = 1f;
+
+    [BoxGroup("攻击属性")]
+    [LabelText("暴击率")]
+    public float critRate = 0.05f;
+
+    [BoxGroup("攻击属性")]
+    [LabelText("暴击伤害")]
+    public float critDamage = 1.2f;
 
     [Header("特效")]
     public GameObject attackEffectPrefab;
@@ -87,6 +105,25 @@ public class WeaponBase : MonoBehaviour
             bulletList.Add(bullet);
             //Destroy(effect, effectDuration);
         }
+    }
+
+    /// <summary>
+    /// 返回伤害值
+    /// </summary>
+    /// <param name="isCrit">是否暴击</param>
+    /// <returns></returns>
+    public virtual float GetDamage(out bool isCrit)
+    { 
+        var randVal = Random.Range(0f, 1f);
+        isCrit = false;
+        var finalDamage = damage;
+        if (randVal <= critRate)
+        {
+            isCrit = true;
+            finalDamage *= critDamage;
+        }
+        Debug.Log($"WeaponBase GetDamage {finalDamage} isCrit {isCrit}");
+        return finalDamage;
     }
 
     /// <summary>
@@ -203,14 +240,14 @@ public class WeaponBase : MonoBehaviour
             target = nearestActor;
         }
 
-        if (target != null)
-        {
-            Debug.Log($"{transform.parent.name} FindNearestTarget {target.name}");
-        }
-        else
-        {
-            Debug.Log($"{transform.parent.name} FindNearestTarget is NULL!!!!");
-        }
+        //if (target != null)
+        //{
+        //    Debug.Log($"{transform.parent.name} FindNearestTarget {target.name}");
+        //}
+        //else
+        //{
+        //    Debug.Log($"{transform.parent.name} FindNearestTarget is NULL!!!!");
+        //}
         //GameObject[] potentialTargets = GameObject.FindGameObjectsWithTag(targetType.ToString());
         //float nearestDistance = float.MaxValue;
         //Transform nearestTarget = null;

@@ -12,6 +12,36 @@ PrefabInstance:
       propertyPath: m_Simulated
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 160755383718473598, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 160755383718473598, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 160755383718473598, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 160755383718473598, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163001554623729730, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164659514643524738, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2836413651653245868, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: healthGradient.key0.b
@@ -32,6 +62,12 @@ PrefabInstance:
       propertyPath: healthGradient.key1.r
       value: 0.3042903
       objectReference: {fileID: 0}
+    - target: {fileID: 3146933041606484006, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0867fa4bfed6d8d42b13d0ccbd34d8ab,
+        type: 3}
     - target: {fileID: 3146933041606484006, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: m_Color.b
@@ -65,7 +101,7 @@ PrefabInstance:
     - target: {fileID: 3778699638639546089, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: moveSpeed
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3778699638639546089, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
@@ -173,6 +209,12 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8018868
       objectReference: {fileID: 0}
+    - target: {fileID: 5971931044776404030, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bef5b6e897e9fad40accc44f23b1a399,
+        type: 3}
     - target: {fileID: 8598151063753775267, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -219,6 +261,8 @@ MonoBehaviour:
   attackRange: 3
   attackCooldown: 2
   bulletSpeed: 1.5
+  critRate: 0.05
+  critDamage: 1.2
   attackEffectPrefab: {fileID: 7695393459228443414, guid: 10affea1a5c157241aa8e0355551629b,
     type: 3}
   effectDuration: 0.5
