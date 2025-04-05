@@ -45,12 +45,17 @@ PrefabInstance:
     - target: {fileID: 2836413651653245868, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: healthGradient.key0.b
-      value: 0
+      value: 0.70980394
       objectReference: {fileID: 0}
     - target: {fileID: 2836413651653245868, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: healthGradient.key0.g
-      value: 0
+      value: 0.16862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 2836413651653245868, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: healthGradient.key0.r
+      value: 0.9254902
       objectReference: {fileID: 0}
     - target: {fileID: 2836413651653245868, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
@@ -59,8 +64,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2836413651653245868, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
+      propertyPath: healthGradient.key1.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2836413651653245868, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
       propertyPath: healthGradient.key1.r
-      value: 0.3042903
+      value: 0.73333335
+      objectReference: {fileID: 0}
+    - target: {fileID: 2836413651653245868, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: healthGradient.m_ColorSpace
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2836413652022339652, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2836413652022339652, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.023529414
+      objectReference: {fileID: 0}
+    - target: {fileID: 2836413652022339652, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.73333335
       objectReference: {fileID: 0}
     - target: {fileID: 3146933041606484006, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
