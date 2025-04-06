@@ -34,6 +34,9 @@ public class CardDataConfig : ScriptableObject
 public class CardData
 {
     [TableColumnWidth(60, Resizable = false)]
+    public string cardGroupId = "000";
+
+    [TableColumnWidth(60, Resizable = false)]
     [PreviewField(Alignment = ObjectFieldAlignment.Center)]
     public Sprite characterTex;
 

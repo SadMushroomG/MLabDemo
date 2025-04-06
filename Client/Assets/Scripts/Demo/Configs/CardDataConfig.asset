@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CardDataConfig
   m_EditorClassIdentifier: 
   cardDataList:
-  - characterTex: {fileID: 21300000, guid: 1225b783f56b2564f9a816bd2b31ad25, type: 3}
+  - cardGroupId: "\u57FA\u7840"
+    characterTex: {fileID: 21300000, guid: 1225b783f56b2564f9a816bd2b31ad25, type: 3}
     buffIcon: {fileID: 21300000, guid: d546c18de0e4b83429dd2041530575cb, type: 3}
     cardQuailty: 0
     cardName: Speed Up
@@ -23,25 +24,29 @@ MonoBehaviour:
       buffCalculateType: 0
       buffFunction: 1
       buffValue: 5
-  - characterTex: {fileID: 21300000, guid: 1225b783f56b2564f9a816bd2b31ad25, type: 3}
+  - cardGroupId: "\u57FA\u7840"
+    characterTex: {fileID: 21300000, guid: 1225b783f56b2564f9a816bd2b31ad25, type: 3}
     buffIcon: {fileID: 21300000, guid: 2975ba04ec3265f42804252de1657a3f, type: 3}
     cardQuailty: 1
     cardName: "\u66B4\u51FB"
     skillDescribe: "\u66B4\u51FB+5%"
     buffDataList: []
-  - characterTex: {fileID: 21300000, guid: 1225b783f56b2564f9a816bd2b31ad25, type: 3}
+  - cardGroupId: "\u57FA\u7840"
+    characterTex: {fileID: 21300000, guid: 1225b783f56b2564f9a816bd2b31ad25, type: 3}
     buffIcon: {fileID: 21300000, guid: 36759d157ec81c440abe7b95f7f3a0e2, type: 3}
     cardQuailty: 0
     cardName: Damage ++
     skillDescribe: "\u5B50\u5F39\u4F24\u5BB3+10"
     buffDataList: []
-  - characterTex: {fileID: 21300000, guid: 1225b783f56b2564f9a816bd2b31ad25, type: 3}
+  - cardGroupId: "\u57FA\u7840"
+    characterTex: {fileID: 21300000, guid: 1225b783f56b2564f9a816bd2b31ad25, type: 3}
     buffIcon: {fileID: 0}
     cardQuailty: 2
     cardName: "\u795E\u7F5A\uFF01"
     skillDescribe: "\u968F\u673A\u964D\u4E0B\u5149\u67F1\u6253\u51FB\u654C\u4EBA"
     buffDataList: []
-  - characterTex: {fileID: 0}
+  - cardGroupId: "\u57FA\u7840"
+    characterTex: {fileID: 0}
     buffIcon: {fileID: 0}
     cardQuailty: 0
     cardName: "\u9ED8\u8BA4\u5361\u724C"
