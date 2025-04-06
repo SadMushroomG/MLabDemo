@@ -36,8 +36,9 @@ public class BuildingBase : ActorBase
         }
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         // 检查游戏结束条件
         if (currentHealth <= 0)
         {

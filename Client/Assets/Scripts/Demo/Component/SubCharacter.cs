@@ -22,9 +22,9 @@ public class SubCharacter : ActorBase
         curState = SubCharacterState.Idle;
         deltaTime = idleDeltaTime;
     }
-
-    public void Update()
+    protected override void Update()
     {
+        base.Update();
         if (curState == SubCharacterState.Moving)
         {
             // 向目标位置移动

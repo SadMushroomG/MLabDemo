@@ -1,3 +1,4 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,26 +11,25 @@ public class ChessActorBase : ActorBase
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float rotationSpeed = 360f;
     [SerializeField] private float stopDistance = 0.1f;
-    [SerializeField] private bool faceTarget = true;
     [SerializeField] private bool smoothMovement = true;
 
     [Header("Animation")]
     [SerializeField] private string movingAnimationTrigger = "IsMoving";
 
+
     private SpriteRenderer spriteRenderer;
     private Vector3 currentVelocity;
     private bool isMoving = false;
 
-
     public override void Awake()
     {
         base.Awake();
-        spriteRenderer = GetComponent<SpriteRenderer>();
         targetTransform = GameMain.Instance.GetTransformTarget(targetType);
     }
- 
-    private void Update()
+
+    protected override void Update()
     {
+        base.Update();
         if (targetTransform == null) return;
 
         Vector3 directionToTarget = targetTransform.position - transform.position;
@@ -59,10 +59,6 @@ public class ChessActorBase : ActorBase
                 transform.position += normalizedDirection * moveSpeed * GameMain.deltaTime;
             }
 
-            if (faceTarget)
-            {
-                spriteRenderer.flipX = normalizedDirection.x < 0;
-            }
 
             if (!isMoving)
             {

@@ -140,6 +140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3778699638639546089, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
+      propertyPath: showNodeRoot
+      value: 
+      objectReference: {fileID: 5476239306554198443}
+    - target: {fileID: 3778699638639546089, guid: c1abf6da1fce56b47abd2387a0d206bb,
+        type: 3}
       propertyPath: weapons.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -301,3 +306,9 @@ MonoBehaviour:
   attacked: 0
   detectionRadius: 10
   targetUpdateInterval: 0.5
+--- !u!4 &5476239306554198443 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 160755383718473598, guid: c1abf6da1fce56b47abd2387a0d206bb,
+    type: 3}
+  m_PrefabInstance: {fileID: 5315545576630429397}
+  m_PrefabAsset: {fileID: 0}

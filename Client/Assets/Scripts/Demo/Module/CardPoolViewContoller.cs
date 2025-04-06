@@ -34,6 +34,8 @@ public class CardPoolViewContoller : BaseViewController
             int index = i;
             cardComponentList[i].GetComponent<Button>().onClick.AddListener(() => OnSelectedCard(index));
         }
+
+        CursorController.SwitchCursorState(CursorState.Normal);
     }
 
     public override void Hide()
@@ -44,6 +46,8 @@ public class CardPoolViewContoller : BaseViewController
         {
             canvasRoot.SetActive(false);
         }
+
+        CursorController.SwitchCursorState(CursorState.Attack);
     }
 
     private void OnSelectedCard(int index)

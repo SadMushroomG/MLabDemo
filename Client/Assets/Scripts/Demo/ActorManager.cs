@@ -120,9 +120,9 @@ public class ActorManager : MonoBehaviour
                     {
                         data.state = SeedStateEnum.Pin;
                         data.pinOffset = curOffset;
-                        var animator = data.seed.GetComponent<Animation>();
-                        animator.Play("anim_seed_split");
-                        data.lifeTime = 0.4f;
+                        var animator = data.seed.GetComponentInChildren<Animator>();
+                        animator.SetTrigger("split");
+                        data.lifeTime = 1.0f;
                     }
                     else
                     {
@@ -137,8 +137,8 @@ public class ActorManager : MonoBehaviour
                     data.lifeTime -= GameMain.deltaTime;
                     if (data.lifeTime <= 0)
                     {
-                        var pos0 = data.seed.transform.GetChild(1).transform.position;
-                        var pos1 = data.seed.transform.GetChild(2).transform.position;
+                        var pos0 = data.seed.transform.position;
+                        var pos1 = data.seed.transform.position + Vector3.up * 0.2f;
                         SpawnActor(MLabActorType.PlayerB, pos0);
                         SpawnActor(MLabActorType.PlayerB, pos1);
                         GameObject.Destroy(data.seed);
@@ -163,9 +163,9 @@ public class ActorManager : MonoBehaviour
                     {
                         data.state = SeedStateEnum.Pin;
                         data.pinOffset = curOffset;
-                        var animator = data.seed.GetComponent<Animation>();
-                        animator.Play("anim_seed_split");
-                        data.lifeTime = 0.4f;
+                        var animator = data.seed.GetComponentInChildren<Animator>();
+                        animator.SetTrigger("split");
+                        data.lifeTime = 1.0f;
                     }
                     else
                     {
@@ -180,8 +180,8 @@ public class ActorManager : MonoBehaviour
                     data.lifeTime -= GameMain.deltaTime;
                     if (data.lifeTime <= 0)
                     {
-                        var pos0 = data.seed.transform.GetChild(1).transform.position;
-                        var pos1 = data.seed.transform.GetChild(2).transform.position;
+                        var pos0 = data.seed.transform.position;
+                        var pos1 = data.seed.transform.position + Vector3.up * 0.2f;
                         SpawnActor(MLabActorType.chessRed, pos0);
                         SpawnActor(MLabActorType.chessRed, pos1);
                         GameObject.Destroy(data.seed);

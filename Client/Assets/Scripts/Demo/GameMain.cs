@@ -132,6 +132,7 @@ public class GameMain : MonoBehaviour
 
     private void Start()
     {
+        CursorController.SwitchCursorState(CursorState.Attack);
         for (int i = 0; i < initActorCount; i++)
         {
             ActorManager.Instance.SpawnActor(MLabActorType.chessRed);
@@ -143,12 +144,14 @@ public class GameMain : MonoBehaviour
     {
         if (redSpawn.currentHealth <= 0)
         {
-            Debug.Log("蓝方胜利");
+            //TODO胜利结算
+            //Debug.Log("蓝方胜利");
             gameState = GameStateEnum.GameOver;  
         }
         else if (blueSpawn.currentHealth <= 0)
         {
-            Debug.Log("红方胜利");
+            //TODO胜利结算
+            //Debug.Log("红方胜利");
             gameState = GameStateEnum.GameOver;  
         }
     }

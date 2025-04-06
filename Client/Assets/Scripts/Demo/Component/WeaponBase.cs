@@ -107,6 +107,19 @@ public class WeaponBase : MonoBehaviour
         }
     }
 
+    protected void SpawnAttackEffect(Vector2 targetPos)
+    {
+        if (attackEffectPrefab != null)
+        {
+            GameObject effect = Instantiate(attackEffectPrefab, transform.position, Quaternion.identity);
+            effect.transform.parent = GameMain.GetBulletRoot();
+            //effect.transform.LookAt(target.transform.position);
+            BulletBase bullet = effect.GetComponent<BulletBase>();
+            bullet.Initialize(targetPos, bulletSpeed, damage, owner.actorType, this);
+            bulletList.Add(bullet);
+        }
+    }
+
     /// <summary>
     /// 返回伤害值
     /// </summary>
@@ -122,7 +135,7 @@ public class WeaponBase : MonoBehaviour
             isCrit = true;
             finalDamage *= critDamage;
         }
-        Debug.Log($"WeaponBase GetDamage {finalDamage} isCrit {isCrit}");
+        //Debug.Log($"WeaponBase GetDamage {finalDamage} isCrit {isCrit}");
         return finalDamage;
     }
 
@@ -162,6 +175,11 @@ public class WeaponBase : MonoBehaviour
 
     protected void Update()
     {
+        UpdateAttackBehavior();
+    }
+
+    public virtual void UpdateAttackBehavior()
+    {
         // 定期更新目标
         if ((GameMain.globalTime - lastUpdateTime) >= targetUpdateInterval || target == null)
         {
@@ -175,6 +193,7 @@ public class WeaponBase : MonoBehaviour
             float distanceToTarget = Vector2.Distance(transform.position, target.transform.position);
             attacked = CheckAndAttack(distanceToTarget);
         }
+
     }
 
     protected virtual bool CheckAndAttack(float distanceToTarget)

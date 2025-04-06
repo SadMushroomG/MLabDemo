@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ActorBase : MonoBehaviour
 {
@@ -55,6 +56,20 @@ public class ActorBase : MonoBehaviour
     protected Animator animator;
     protected Transform targetTransform;
     protected ActorBase lastAttackedActor;
+
+    [BoxGroup("动画")]
+    [LabelText("展示节点Root")]
+    public Transform showNodeRoot;
+
+    [BoxGroup("动画")]
+    [LabelText("Sprite初始向右")]
+    public bool initDirRight;
+    private int lastScale = 0;
+
+    [BoxGroup("动画")]
+    [LabelText("动态切换面向")]
+    public bool faceTarget = true;
+    private Vector3 lastPosisiton;
 
     public bool IsAttackedThisFrame()
     {
@@ -127,5 +142,22 @@ public class ActorBase : MonoBehaviour
     public virtual void SetLastAttackedActor(ActorBase actor)
     {
         lastAttackedActor = actor;
+    }
+
+    protected virtual void Update()
+    {
+        if (faceTarget && showNodeRoot != null && transform.position != lastPosisiton)
+        {
+            var dir = (transform.position - lastPosisiton).normalized;
+            var scaleX = dir.x > 0 ? 1 : -1;
+            if (scaleX != lastScale)
+            {
+                var originScale = showNodeRoot.localScale;
+                showNodeRoot.transform.localScale = new Vector3((initDirRight ? 1 : -1) * scaleX * Mathf.Abs(originScale.x), originScale.y, originScale.z);
+                Debug.Log(gameObject.name + " Switch X Scale");
+                lastScale = scaleX;
+            }
+            lastPosisiton = transform.position;
+        }
     }
 }
