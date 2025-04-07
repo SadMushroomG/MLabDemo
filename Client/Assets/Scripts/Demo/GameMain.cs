@@ -121,6 +121,14 @@ public class GameMain : MonoBehaviour
         {
             deltaTime = 0f;
         }
+
+        foreach (var controller in controllerList)
+        {
+            if (controller.isShow)
+            { 
+                controller.Update();
+            }
+        }
         CheckGameOver();
     }
 
@@ -163,10 +171,16 @@ public class GameMain : MonoBehaviour
 
     private void InitModules()
     {
-        var controller = new CardPoolViewContoller();
-        controller.Init();
+        var cardController = new CardPoolViewContoller();
+        cardController.Init();
+        controllerDic.Add(cardController.moduleName, cardController);
+        controllerList.Add(cardController);
 
-        controllerDic.Add(controller.moduleName, controller);
+        var infoViewController = new PlayerInfoViewController();
+        infoViewController.Init();
+        controllerDic.Add(infoViewController.moduleName, infoViewController);
+        controllerList.Add(infoViewController);
+        infoViewController.Show();
     }
 
 

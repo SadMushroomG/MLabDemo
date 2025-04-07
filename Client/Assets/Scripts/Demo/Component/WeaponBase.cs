@@ -9,6 +9,13 @@ public class WeaponBase : MonoBehaviour
     [LabelText("伤害")]
     public float damage = 10f;
 
+    private float damageAdd = 0f;
+    public float DamageAdd
+    {
+        get { return damageAdd; }
+        set { damageAdd = value; }
+    }
+
     [BoxGroup("攻击属性")]
     [LabelText("攻击范围")]
     public float attackRange = 2f;
@@ -16,6 +23,12 @@ public class WeaponBase : MonoBehaviour
     [BoxGroup("攻击属性")]
     [LabelText("冷却时间")]
     public float attackCooldown = 1f;
+    private float attackCooldownMultiParam = 1f;
+    public float AttackCooldownMultiParam
+    {
+        get { return attackCooldownMultiParam; }
+        set { attackCooldownMultiParam = value; }
+    }
 
     [BoxGroup("攻击属性")]
     [LabelText("子弹速度")]
@@ -25,9 +38,24 @@ public class WeaponBase : MonoBehaviour
     [LabelText("暴击率")]
     public float critRate = 0.05f;
 
+    private float critRateAdd = 0f;
+    public float CritRateAdd
+    {
+        get { return critRateAdd; }
+        set { critRateAdd = value; }
+    }
+
+
     [BoxGroup("攻击属性")]
     [LabelText("暴击伤害")]
     public float critDamage = 1.2f;
+
+    private float critDamageAdd = 0f;
+    public float CritDamageAdd
+    {
+        get { return critDamageAdd; }
+        set { critDamageAdd = value; }
+    }
 
     [Header("特效")]
     public GameObject attackEffectPrefab;
@@ -101,7 +129,7 @@ public class WeaponBase : MonoBehaviour
             effect.transform.parent = GameMain.GetBulletRoot();
             //effect.transform.LookAt(target.transform.position);
             BulletBase bullet = effect.GetComponent<BulletBase>();
-            bullet.Initialize(target, bulletSpeed, damage, owner.actorType, this);
+            bullet.Initialize(target, bulletSpeed, damage + damageAdd, owner.actorType, this);
             bulletList.Add(bullet);
             //Destroy(effect, effectDuration);
         }
@@ -115,7 +143,7 @@ public class WeaponBase : MonoBehaviour
             effect.transform.parent = GameMain.GetBulletRoot();
             //effect.transform.LookAt(target.transform.position);
             BulletBase bullet = effect.GetComponent<BulletBase>();
-            bullet.Initialize(targetPos, bulletSpeed, damage, owner.actorType, this);
+            bullet.Initialize(targetPos, bulletSpeed, damage + damageAdd, owner.actorType, this);
             bulletList.Add(bullet);
         }
     }
@@ -129,11 +157,11 @@ public class WeaponBase : MonoBehaviour
     { 
         var randVal = Random.Range(0f, 1f);
         isCrit = false;
-        var finalDamage = damage;
-        if (randVal <= critRate)
+        var finalDamage = damage + damageAdd;
+        if (randVal <= (critRate + critRateAdd))
         {
             isCrit = true;
-            finalDamage *= critDamage;
+            finalDamage *= (critDamage + critDamageAdd);
         }
         //Debug.Log($"WeaponBase GetDamage {finalDamage} isCrit {isCrit}");
         return finalDamage;
@@ -200,7 +228,7 @@ public class WeaponBase : MonoBehaviour
     {
         isInAttackRange = distanceToTarget <= attackRange;
 
-        if (isInAttackRange && (GameMain.globalTime - lastAttackTime) >= attackCooldown)
+        if (isInAttackRange && (GameMain.globalTime - lastAttackTime) >= (attackCooldown / attackCooldownMultiParam))
         {
             Attack();
             lastAttackTime = GameMain.globalTime;

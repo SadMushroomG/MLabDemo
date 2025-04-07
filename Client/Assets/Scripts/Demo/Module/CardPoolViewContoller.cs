@@ -31,8 +31,7 @@ public class CardPoolViewContoller : BaseViewController
         {
             int randIndex = Random.Range(0, config.cardDataList.Count - 1);
             cardComponentList[i].SetData(config.cardDataList[randIndex]);
-            int index = i;
-            cardComponentList[i].GetComponent<Button>().onClick.AddListener(() => OnSelectedCard(index));
+            cardComponentList[i].GetComponent<Button>().onClick.AddListener(() => OnSelectedCard(randIndex));
         }
 
         CursorController.SwitchCursorState(CursorState.Normal);
@@ -55,6 +54,8 @@ public class CardPoolViewContoller : BaseViewController
         // 在这里处理选中卡片的逻辑
         // 可以通过 cardComponentList[index] 来访问对应的卡片
         Debug.Log($"Selected card index: {index}");
+        var data = config.cardDataList[index];
+        GameMain.Instance.blueSpawn.ApplyBuff(ref data.buffDataList);
         GameMain.Instance.ResumeGame();
         Hide();
     }

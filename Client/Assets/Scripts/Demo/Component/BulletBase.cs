@@ -78,9 +78,10 @@ public class BulletBase : MonoBehaviour
         {
             // Deal damage
             //DamageCalculator.Instance.CalculateDamage(this, target.GetComponent<ActorBase>());
-            actor.TakeDamage(Weapon.GetDamage(out bool isCrit));
+            var finalDamage = Weapon.GetDamage(out bool isCrit);
+            actor.TakeDamage(finalDamage);
             actor.SetLastAttackedActor(GetComponentInParent<WeaponBase>()?.GetOwner());
-            JumpWordHelper.Instance.GenerateJumpWord(actorType, ((int)bulletDamage).ToString(), actor.transform.position + Vector3.up * 0.5f, isCrit);
+            JumpWordHelper.Instance.GenerateJumpWord(actorType, ((int)finalDamage).ToString(), actor.transform.position + Vector3.up * 0.5f, isCrit);
             //看是不是只能造成一次伤害的武器发出的子弹
             if (Weapon.OnBulletHit(this))
             {

@@ -16,7 +16,7 @@ public class FireBall : WeaponBase
             effect.transform.localScale = Vector3.one * fireBallScale;
             
             BulletBase bullet = effect.GetComponent<BulletBase>();
-            bullet.Initialize(target, bulletSpeed, damage, owner.actorType, this);
+            bullet.Initialize(target, bulletSpeed, damage + DamageAdd, owner.actorType, this);
             bulletList.Add(bullet);
         }
     }
@@ -25,7 +25,7 @@ public class FireBall : WeaponBase
     {
         isInAttackRange = distanceToTarget <= attackRange;
 
-        if (Input.GetKeyDown (KeyCode.Space) && isInAttackRange && (GameMain.globalTime - lastAttackTime) >= attackCooldown)
+        if (Input.GetKeyDown (KeyCode.Space) && isInAttackRange && (GameMain.globalTime - lastAttackTime) >= (attackCooldown / AttackCooldownMultiParam))
         {
             Attack();
             lastAttackTime = GameMain.globalTime;

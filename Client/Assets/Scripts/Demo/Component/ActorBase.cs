@@ -19,7 +19,6 @@ public class ActorBase : MonoBehaviour
 
     [LabelText("当前生命")]
     public float currentHealth = 100; 
-
     
     [BoxGroup("经验")]
     [LabelText("经验条显示")]
@@ -44,6 +43,10 @@ public class ActorBase : MonoBehaviour
     [BoxGroup("攻击")]
     [LabelText("武器")]
     [SerializeField] public List<WeaponBase> weapons;
+
+    [BoxGroup("攻击")]
+    [LabelText("主武器")]
+    [SerializeField] public WeaponBase mainWeapon;
 
     [BoxGroup("动画")]
     [LabelText("使用动画")]
@@ -70,6 +73,13 @@ public class ActorBase : MonoBehaviour
     [LabelText("动态切换面向")]
     public bool faceTarget = true;
     private Vector3 lastPosisiton;
+
+    private bool isStateDirty = false;
+    public bool IsStateDirty
+    {
+        get { return isStateDirty; }
+        set { isStateDirty = value; }
+    }
 
     public bool IsAttackedThisFrame()
     {
@@ -110,6 +120,15 @@ public class ActorBase : MonoBehaviour
         if (useAnimation)
         {
             animator = GetComponent<Animator>();
+        }
+    }
+
+    public virtual void Start()
+    {
+        GetComponentsInChildren<WeaponBase>(weapons);
+        if (weapons.Count > 0)
+        { 
+            mainWeapon = weapons[0];
         }
     }
 
@@ -159,5 +178,54 @@ public class ActorBase : MonoBehaviour
             }
             lastPosisiton = transform.position;
         }
+    }
+
+    public void ApplyBuff(ref List<BuffData> buffDataList)
+    {
+        foreach (var buff in buffDataList)
+        {
+            var buffValue = buff.buffValue;
+            if (buff.buffCalculateType == BuffCalculateType.Percent)
+            {
+                buffValue = buffValue / 100f;
+            }
+            switch (buff.buffType)
+            {
+                // 攻击伤害 ========================================================
+                case BuffType.Attack:
+                    //只做加法
+                    if (buff.buffFunction == BuffCalculateFunction.Add)
+                    {
+                        //只处理主武器
+                        mainWeapon.DamageAdd += buffValue;
+                    }
+                    break;
+                // 暴击率 ========================================================
+                case BuffType.CritRate:
+                    if (buff.buffFunction == BuffCalculateFunction.Add)
+                    {
+                        //只处理主武器
+                        mainWeapon.CritRateAdd += buffValue;
+                    }
+                    break;
+                // 暴击伤害 ========================================================
+                case BuffType.CritDamange:
+                    if (buff.buffFunction == BuffCalculateFunction.Add)
+                    {
+                        //只处理主武器
+                        mainWeapon.CritDamageAdd += buffValue;
+                    }
+                    break;
+                // 攻击速度 ========================================================
+                case BuffType.AttackSpeed:
+                    if (buff.buffFunction == BuffCalculateFunction.Multiply)
+                    {
+                        //只处理主武器
+                        mainWeapon.AttackCooldownMultiParam *= ( 1 + buffValue);
+                    }
+                    break;
+            }
+        }
+        isStateDirty = true;
     }
 }

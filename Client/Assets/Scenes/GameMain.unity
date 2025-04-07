@@ -832,6 +832,7 @@ MonoBehaviour:
   curExpMaxValue: 100
   expValue: 1
   weapons: []
+  mainWeapon: {fileID: 0}
   useAnimation: 0
   attackAnimationTrigger: Attack
   showNodeRoot: {fileID: 175207350}
@@ -852,7 +853,7 @@ GameObject:
   - component: {fileID: 155006845}
   - component: {fileID: 155006846}
   m_Layer: 5
-  m_Name: Attack speed
+  m_Name: Attack cooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -899,7 +900,7 @@ GameObject:
   - component: {fileID: 155438392}
   - component: {fileID: 155438391}
   m_Layer: 5
-  m_Name: move
+  m_Name: critDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -972,10 +973,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
+  m_fontSize: 24
   m_fontSizeBase: 32
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 24
   m_fontStyle: 0
@@ -988,7 +989,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -1107,10 +1108,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
+  m_fontSize: 24
   m_fontSizeBase: 32
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 24
   m_fontStyle: 0
@@ -1123,7 +1124,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -1782,10 +1783,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
+  m_fontSize: 24
   m_fontSizeBase: 32
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 24
   m_fontStyle: 0
@@ -1798,7 +1799,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -1968,7 +1969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u79FB\u52A8\u901F\u5EA6"
+  m_text: "\u66B4\u51FB\u4F24\u5BB3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b010b128689ee6b42b191b9045a796a4, type: 2}
   m_sharedMaterial: {fileID: -2462528717874997962, guid: b010b128689ee6b42b191b9045a796a4,
@@ -2157,7 +2158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -30, y: -30}
+  m_AnchoredPosition: {x: -60, y: -60}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 1, y: 1}
 --- !u!1 &236505265
@@ -2578,18 +2579,6 @@ MonoBehaviour:
   swipeSpeed: 20
   cameraRangeXMin: 0
   cameraRangeXMax: 18
---- !u!114 &336599005 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3599736868561910759, guid: 2b66804addd0fe9449ede25673b3528e,
-    type: 3}
-  m_PrefabInstance: {fileID: 780563827}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1231216701}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20de31ed1a348534e961649d943252cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &356745193
 GameObject:
   m_ObjectHideFlags: 0
@@ -3331,7 +3320,7 @@ GameObject:
   - component: {fileID: 562482810}
   - component: {fileID: 562482811}
   m_Layer: 5
-  m_Name: Moving speed
+  m_Name: CritDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3650,6 +3639,7 @@ MonoBehaviour:
   curExpMaxValue: 100
   expValue: 1
   weapons: []
+  mainWeapon: {fileID: 0}
   useAnimation: 0
   attackAnimationTrigger: Attack
   showNodeRoot: {fileID: 408665532}
@@ -4225,6 +4215,7 @@ MonoBehaviour:
   curExpMaxValue: 100
   expValue: 1
   weapons: []
+  mainWeapon: {fileID: 0}
   useAnimation: 0
   attackAnimationTrigger: Attack
   showNodeRoot: {fileID: 0}
@@ -4500,7 +4491,7 @@ PrefabInstance:
     - target: {fileID: 6128778813336378312, guid: 2b66804addd0fe9449ede25673b3528e,
         type: 3}
       propertyPath: weapons.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6128778813336378312, guid: 2b66804addd0fe9449ede25673b3528e,
         type: 3}
@@ -4511,7 +4502,7 @@ PrefabInstance:
         type: 3}
       propertyPath: weapons.Array.data[0]
       value: 
-      objectReference: {fileID: 336599005}
+      objectReference: {fileID: 1231216703}
     - target: {fileID: 6128778813336378312, guid: 2b66804addd0fe9449ede25673b3528e,
         type: 3}
       propertyPath: weapons.Array.data[1]
@@ -4648,7 +4639,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainWeapon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3599736868561910759, guid: 2b66804addd0fe9449ede25673b3528e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6128778813336378313, guid: 2b66804addd0fe9449ede25673b3528e,
@@ -7859,6 +7851,7 @@ MonoBehaviour:
   curExpMaxValue: 100
   expValue: 1
   weapons: []
+  mainWeapon: {fileID: 0}
   useAnimation: 0
   attackAnimationTrigger: Attack
   showNodeRoot: {fileID: 2088475889}
@@ -8840,7 +8833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1571451806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9930,7 +9923,7 @@ MonoBehaviour:
   initActorCount: 5
   bulletRoot: {fileID: 869577640}
   updateTipText: {fileID: 1446412653}
-  updateCountDownTime: 30
+  updateCountDownTime: 15
   gameState: 0
   uiRoot: {fileID: 1033592528}
 --- !u!114 &1871085651
@@ -10164,7 +10157,7 @@ GameObject:
   - component: {fileID: 1947128335}
   - component: {fileID: 1947128334}
   m_Layer: 5
-  m_Name: speed
+  m_Name: cooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10237,10 +10230,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 32
+  m_fontSize: 24
   m_fontSizeBase: 32
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 24
   m_fontStyle: 0
@@ -10253,7 +10246,7 @@ MonoBehaviour:
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
+  m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
@@ -10443,6 +10436,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2052141234}
+  - component: {fileID: 2052141235}
   m_Layer: 5
   m_Name: info_layer
   m_TagString: Untagged
@@ -10471,6 +10465,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2052141235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052141233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ed8872a323c50438d98369dcee0323, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeList:
+  - nodeName: AttackTxt
+    node: {fileID: 196833048}
+  - nodeName: AttackCooldown
+    node: {fileID: 1947128332}
+  - nodeName: CritRate
+    node: {fileID: 158108482}
+  - nodeName: CritDamage
+    node: {fileID: 155438389}
 --- !u!1 &2061659724
 GameObject:
   m_ObjectHideFlags: 0
