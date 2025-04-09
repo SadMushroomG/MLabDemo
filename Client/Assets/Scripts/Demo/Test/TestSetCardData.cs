@@ -13,7 +13,15 @@ public class TestCardData
 {
     [TableColumnWidth(60)]
     [PreviewField(Alignment = ObjectFieldAlignment.Center)]
+    public Sprite buffIcon;
+
+    [TableColumnWidth(60)]
+    [PreviewField(Alignment = ObjectFieldAlignment.Center)]
     public Sprite characterTex;
+
+    [TableColumnWidth(60)]
+    [PreviewField(Alignment = ObjectFieldAlignment.Center)]
+    public Sprite characterShadowTex;
 
     [TableColumnWidth(60)]
     [TextArea]
@@ -28,9 +36,11 @@ public class TestCardData
 
     private TestSetCardData component;
 
-    public TestCardData(Sprite characterTex, string cardName, string skillDescribe, MGameCardQuailty quailty, TestSetCardData component)
+    public TestCardData(Sprite bufficon,Sprite characterTex, Sprite characterShadowTex,string cardName, string skillDescribe, MGameCardQuailty quailty, TestSetCardData component)
     {
+        this.buffIcon = bufficon;
         this.characterTex = characterTex;
+        this.characterShadowTex = characterShadowTex;
         this.cardName = cardName;
         this.skillDescribe = skillDescribe;
         this.cardQuailty = quailty;
@@ -67,7 +77,7 @@ public class TestSetCardData : MonoBehaviour
         for ( int i = 0; i < config.cardDataList.Count; i++)
         {
             var data = config.cardDataList[i];
-            cardDataList.Add(new TestCardData(data.characterTex, data.cardName, data.skillDescribe, data.cardQuailty, this));
+            cardDataList.Add(new TestCardData(data.buffIcon,data.characterTex, data.characterShadowTex,data.cardName, data.skillDescribe, data.cardQuailty, this));
         }
     }
 
@@ -85,16 +95,35 @@ public class TestSetCardData : MonoBehaviour
             if (tran.name == "icon")
             { 
                 var icon = tran.GetComponent<Image>();
+                icon.sprite = data.buffIcon;
+            }
+
+            if (tran.name == "icon_bg")
+            {
+                var icon = tran.GetComponent<Image>();
+                icon.sprite = data.buffIcon;
+            }
+
+            if (tran.name == "hero")
+            {
+                var icon = tran.GetComponent<Image>();
                 icon.sprite = data.characterTex;
             }
 
-            if (tran.name == "txt_1")
+            if (tran.name == "hreo_shadow")
+            {
+                var icon = tran.GetComponent<Image>();
+                icon.sprite = data.characterShadowTex;
+            }
+
+
+            if (tran.name == "card_title")
             {
                 var text = tran.GetComponent<TMP_Text>();
                 text.text = data.cardName;
             }
 
-            if (tran.name == "txt_2")
+            if (tran.name == "card_description")
             {
                 var text = tran.GetComponent<TMP_Text>();
                 text.text = data.skillDescribe;

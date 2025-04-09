@@ -38,11 +38,15 @@ public class CardData
 
     [TableColumnWidth(60, Resizable = false)]
     [PreviewField(Alignment = ObjectFieldAlignment.Center)]
+    public Sprite buffIcon;
+
+    [TableColumnWidth(60, Resizable = false)]
+    [PreviewField(Alignment = ObjectFieldAlignment.Center)]
     public Sprite characterTex;
 
     [TableColumnWidth(60, Resizable = false)]
     [PreviewField(Alignment = ObjectFieldAlignment.Center)]
-    public Sprite buffIcon;
+    public Sprite characterShadowTex;
 
     [TableColumnWidth(60, Resizable = false)]
     public MGameCardQuailty cardQuailty = MGameCardQuailty.Grey;
