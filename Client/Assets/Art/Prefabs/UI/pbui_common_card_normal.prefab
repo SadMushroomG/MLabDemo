@@ -732,15 +732,14 @@ MonoBehaviour:
     <color=#348DFF>+10%</color>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b010b128689ee6b42b191b9045a796a4, type: 2}
-  m_sharedMaterial: {fileID: -2462528717874997962, guid: b010b128689ee6b42b191b9045a796a4,
-    type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: d9685a0fcf856964281ea81732c08c3d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282203453
-  m_fontColor: {r: 0.2392157, g: 0.2392157, b: 0.2392157, a: 1}
+    rgba: 4282466625
+  m_fontColor: {r: 0.254717, g: 0.254717, b: 0.254717, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

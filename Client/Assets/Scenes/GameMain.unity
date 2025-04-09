@@ -5912,7 +5912,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 1
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -10423,7 +10423,7 @@ PrefabInstance:
     - target: {fileID: 5085194517219256297, guid: 51d3aaf5b50d91f42ae8cdae2e268ad6,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5352424158977602197, guid: 51d3aaf5b50d91f42ae8cdae2e268ad6,
         type: 3}
@@ -10528,7 +10528,7 @@ PrefabInstance:
     - target: {fileID: 5910334953389518494, guid: 51d3aaf5b50d91f42ae8cdae2e268ad6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5910334953389518494, guid: 51d3aaf5b50d91f42ae8cdae2e268ad6,
         type: 3}
@@ -10555,10 +10555,15 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6575953158819797536, guid: 51d3aaf5b50d91f42ae8cdae2e268ad6,
+        type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6871452147236656760, guid: 51d3aaf5b50d91f42ae8cdae2e268ad6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6871452147236656760, guid: 51d3aaf5b50d91f42ae8cdae2e268ad6,
         type: 3}
@@ -10593,7 +10598,7 @@ PrefabInstance:
     - target: {fileID: 8712401152251799050, guid: 51d3aaf5b50d91f42ae8cdae2e268ad6,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8712401152251799050, guid: 51d3aaf5b50d91f42ae8cdae2e268ad6,
         type: 3}
