@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8048413385445085951}
   - component: {fileID: 8932645532381578018}
   m_Layer: 5
-  m_Name: angle
+  m_Name: angel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Angle
+  m_text: Angel
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a4e63c328a8e0345bdaf63e3e485730, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: a48a4daa69697fe4dac18d6328b403fb, type: 2}
