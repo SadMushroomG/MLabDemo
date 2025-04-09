@@ -1,7 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerInfoViewController : BaseViewController
 {
@@ -10,6 +13,13 @@ public class PlayerInfoViewController : BaseViewController
     private TMP_Text coolDownTxt;
     private TMP_Text critRateTxt;
     private TMP_Text critDamageTxt;
+
+    private Transform bloodRedTrans;
+    private Transform bloodBlueTrans;
+
+    private GameObject winView;
+    private GameObject loseView;
+
     private bool isTextInit = false;
     public override void Init()
     {
@@ -22,7 +32,34 @@ public class PlayerInfoViewController : BaseViewController
             coolDownTxt = binder.nodeList[1].node.GetComponent<TMP_Text>();
             critRateTxt = binder.nodeList[2].node.GetComponent<TMP_Text>();
             critDamageTxt = binder.nodeList[3].node.GetComponent<TMP_Text>();
+
+            bloodRedTrans = binder.nodeList[4].node.transform;
+            bloodBlueTrans = binder.nodeList[5].node.transform;
+
+            loseView = binder.nodeList[6].node;
+            winView = binder.nodeList[7].node;
+
+            loseView.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                SceneManager.LoadScene("MainMenu");
+            });
+
+            winView.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                SceneManager.LoadScene("MainMenu");
+            });
         }
+    }
+    public void ShowWinView()
+    {
+        winView.SetActive(true);
+        loseView.SetActive(false);
+    }
+
+    public void ShowLoseView()
+    {
+        winView.SetActive(false);
+        loseView.SetActive(true);
     }
 
     public override void Show()
@@ -42,6 +79,9 @@ public class PlayerInfoViewController : BaseViewController
         {
             UpdateText();
         }
+
+        bloodBlueTrans.localScale = new Vector3(Mathf.Clamp01(GameMain.Instance.blueSpawn.currentHealth / GameMain.Instance.blueSpawn.maxHealth), 1, 1);
+        bloodRedTrans.localScale = new Vector3(Mathf.Clamp01(GameMain.Instance.redSpawn.currentHealth / GameMain.Instance.redSpawn.maxHealth), 1, 1);
     }
 
     private void UpdateText()
@@ -64,7 +104,7 @@ public class PlayerInfoViewController : BaseViewController
         }
         attackDamageTxt.text = damageStr;
 
-        var coolDownStr = $"{weapon.attackCooldown / weapon.AttackCooldownMultiParam}";
+        var coolDownStr = $"{(weapon.attackCooldown / weapon.AttackCooldownMultiParam):0.0}";
         if (weapon.AttackCooldownMultiParam != 1)
         {
             coolDownStr += $" <color=green>(±¶ÂÊ {weapon.AttackCooldownMultiParam})</color>";
