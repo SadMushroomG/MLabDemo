@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardDataList:
   - cardGroupId: "\u57FA\u7840"
-    buffIcon: {fileID: 21300000, guid: d546c18de0e4b83429dd2041530575cb, type: 3}
-    characterTex: {fileID: 21300000, guid: 1225b783f56b2564f9a816bd2b31ad25, type: 3}
+    buffIcon: {fileID: 21300000, guid: afcdda7c7a087f342b53c6e632abcbd8, type: 3}
+    characterTex: {fileID: 0}
     characterShadowTex: {fileID: 0}
     cardQuailty: 0
     cardName: Speed Up
@@ -49,10 +49,11 @@ MonoBehaviour:
       buffCalculateType: 1
       buffFunction: 0
       buffValue: 10
-  - cardGroupId: "\u57FA\u7840"
-    buffIcon: {fileID: 0}
+  - cardGroupId: "\u82F1\u96C4"
+    buffIcon: {fileID: 21300000, guid: b8e32e4be1bead14aaa0d78ff8665447, type: 3}
     characterTex: {fileID: 21300000, guid: 000c7f6496952c040a12da3ac3c68bbc, type: 3}
-    characterShadowTex: {fileID: 0}
+    characterShadowTex: {fileID: 21300000, guid: f17c714231c012741b8b24a9bafbf67e,
+      type: 3}
     cardQuailty: 2
     cardName: "\u795E\u7F5A\uFF01"
     skillDescribe: "\u968F\u673A\u964D\u4E0B\u5149\u67F1\u6253\u51FB\u654C\u4EBA"
