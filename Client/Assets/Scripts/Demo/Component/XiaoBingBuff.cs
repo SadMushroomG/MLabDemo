@@ -73,6 +73,11 @@ public class XiaoBingBuff : WeaponBase
                         }
                     }
                 }
+                GameObject buffShow = soldier.transform.Find("anim_root/character/AttackBuff").gameObject;
+                if (buffShow != null)
+                {
+                    buffShow.SetActive(true);
+                }
             }
         }
     }
