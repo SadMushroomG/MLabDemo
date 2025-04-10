@@ -89,4 +89,24 @@ public class BulletBase : MonoBehaviour
             }
         }
     }
+
+    protected void CheckDamage(Collider2D other)
+    {
+        // Check if the hit object has a health component
+        var actor = other.GetComponent<ActorBase>();
+        if (actor != null && actor.actorType == targetType)
+        {
+            // Deal damage
+            //DamageCalculator.Instance.CalculateDamage(this, target.GetComponent<ActorBase>());
+            var finalDamage = Weapon.GetDamage(out bool isCrit);
+            actor.TakeDamage(finalDamage);
+            actor.SetLastAttackedActor(GetComponentInParent<WeaponBase>()?.GetOwner());
+            JumpWordHelper.Instance.GenerateJumpWord(actorType, ((int)finalDamage).ToString(), actor.transform.position + Vector3.up * 0.5f, isCrit);
+            //看是不是只能造成一次伤害的武器发出的子弹
+            if (Weapon.OnBulletHit(this))
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
 }
