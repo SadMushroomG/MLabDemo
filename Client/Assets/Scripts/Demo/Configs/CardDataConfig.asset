@@ -47,13 +47,13 @@ MonoBehaviour:
     characterShadowTex: {fileID: 0}
     cardQuailty: 0
     cardName: Speed Up
-    skillDescribe: "\u653B\u51FB\u901F\u5EA6+10%"
+    skillDescribe: "\u653B\u51FB\u901F\u5EA6+20%"
     buffDataList:
     - buffId: 0
       buffType: 4
       buffCalculateType: 0
       buffFunction: 1
-      buffValue: 10
+      buffValue: 20
   - cardGroupId: "\u57FA\u7840"
     buffIcon: {fileID: 21300000, guid: 2ed5ca05a2fc07946a9b93e10cba0d06, type: 3}
     characterTex: {fileID: 0}
@@ -66,7 +66,7 @@ MonoBehaviour:
       buffType: 1
       buffCalculateType: 1
       buffFunction: 0
-      buffValue: 5
+      buffValue: 10
   - cardGroupId: "\u57FA\u7840"
     buffIcon: {fileID: 21300000, guid: 2ed5ca05a2fc07946a9b93e10cba0d06, type: 3}
     characterTex: {fileID: 0}
@@ -79,7 +79,7 @@ MonoBehaviour:
       buffType: 2
       buffCalculateType: 1
       buffFunction: 0
-      buffValue: 5
+      buffValue: 10
   - cardGroupId: "\u57FA\u7840"
     buffIcon: {fileID: 21300000, guid: 2ed5ca05a2fc07946a9b93e10cba0d06, type: 3}
     characterTex: {fileID: 0}
