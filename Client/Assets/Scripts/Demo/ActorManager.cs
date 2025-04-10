@@ -315,13 +315,13 @@ public class ActorManager : MonoBehaviour
             foreach (var actor in redActorList)
             {
                 actor.GetComponent<ActorBase>().AddHealth(10);
-                actor.GetComponent<ActorBase>().AddDamage(2);
+                //actor.GetComponent<ActorBase>().AddDamage(2);
             }
 
             foreach (var actor in blueActorList)
             {
                 actor.GetComponent<ActorBase>().AddHealth(10);
-                actor.GetComponent<ActorBase>().AddDamage(2);
+                //actor.GetComponent<ActorBase>().AddDamage(2);
             }
 
             GameMain.Instance.redSpawn.AddDamage(2);
@@ -333,13 +333,13 @@ public class ActorManager : MonoBehaviour
             foreach (var actor in redActorList)
             {
                 actor.GetComponent<ActorBase>().AddHealth(15);
-                actor.GetComponent<ActorBase>().AddDamage(5);
+                //actor.GetComponent<ActorBase>().AddDamage(5);
             }
 
             foreach (var actor in blueActorList)
             {
                 actor.GetComponent<ActorBase>().AddHealth(15);
-                actor.GetComponent<ActorBase>().AddDamage(5);
+                //actor.GetComponent<ActorBase>().AddDamage(5);
             }
 
             GameMain.Instance.redSpawn.AddDamage(5);
