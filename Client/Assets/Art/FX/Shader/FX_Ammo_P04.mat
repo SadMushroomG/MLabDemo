@@ -36,7 +36,7 @@ Material:
     - _Mask1:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0.5, y: 0.5}
     - _TextureSample0:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -207,7 +207,7 @@ Material:
     - _Ztestmode2: 0
     - _maintex_alpha: 1
     - _mask01_alpha: 0
-    - _mask02_alpha: 0
+    - _mask02_alpha: 1
     - _power3: 1
     - _refplane: 1
     m_Colors:
