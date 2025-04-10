@@ -242,7 +242,7 @@ public class WeaponBase : MonoBehaviour
         return Mathf.Clamp01((GameMain.globalTime - lastAttackTime) / (attackCooldown / attackCooldownMultiParam));
     }
 
-    private void FindNearestTarget()
+    protected virtual void FindNearestTarget()
     {
         //已经有目标了，并且没死，就继续打着
         if (target != null)
