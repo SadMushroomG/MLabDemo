@@ -31,6 +31,11 @@ public class XiaoBingBuff : WeaponBase
         }
     }
 
+    public override float GetColdDownProgress()
+    {
+        return Mathf.Clamp01((GameMain.globalTime - lastBuffTime) / (attackCooldown / AttackCooldownMultiParam));
+    }
+
     private void ApplyBuffToAllSoldiers()
     {
         List<GameObject> targetList;
