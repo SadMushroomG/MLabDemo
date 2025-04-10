@@ -185,7 +185,7 @@ public class GameMain : MonoBehaviour
             //TODO胜利结算
             //Debug.Log("蓝方胜利");
             gameState = GameStateEnum.GameOver; 
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
             if (controllerDic.ContainsKey("PlayerInfoViewController"))
             {
                 var infoView = controllerDic["PlayerInfoViewController"] as PlayerInfoViewController;
@@ -197,7 +197,7 @@ public class GameMain : MonoBehaviour
             //TODO胜利结算
             //Debug.Log("红方胜利");
             gameState = GameStateEnum.GameOver;
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
             if (controllerDic.ContainsKey("PlayerInfoViewController"))
             {
                 var infoView = controllerDic["PlayerInfoViewController"] as PlayerInfoViewController;

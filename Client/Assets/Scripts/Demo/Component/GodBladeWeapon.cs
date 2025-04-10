@@ -11,10 +11,11 @@ public class GodBladeWeapon : WeaponBase
     {
         if (attackEffectPrefab != null)
         {
+            var size = 12 / (bladeCount + 1);
             for (int i = 0; i < bladeCount; i++)
             {
-                var actorPos = ActorManager.Instance.GetRandomRedActorPosition();
-                var startPos = MoveDir * bulletSpeed + actorPos;
+                //var actorPos = ActorManager.Instance.GetRandomRedActorPosition();
+                var startPos = new Vector3(-6 + size * (i + 1), 6, 0);
 
                 GameObject effect = Instantiate(attackEffectPrefab, startPos, Quaternion.identity);
                 effect.transform.parent = GameMain.GetBulletRoot();
@@ -23,7 +24,7 @@ public class GodBladeWeapon : WeaponBase
                 BulletBase bullet = effect.GetComponent<BulletBase>();
                 bullet.Initialize(target, bulletSpeed, damage + DamageAdd, owner.actorType, this);
                 bulletList.Add(bullet);
-                bullet.velocity = -MoveDir * bulletSpeed;
+                bullet.velocity = Vector3.down * bulletSpeed;
             }
         }
     }
