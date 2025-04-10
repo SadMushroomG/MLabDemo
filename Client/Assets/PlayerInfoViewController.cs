@@ -42,12 +42,12 @@ public class PlayerInfoViewController : BaseViewController
 
             loseView.GetComponent<Button>().onClick.AddListener(() =>
             {
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("MenuScene");
             });
 
             winView.GetComponent<Button>().onClick.AddListener(() =>
             {
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("MenuScene");
             });
         }
     }
