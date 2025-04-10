@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6754443494467600100}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3851368159390442430
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -165,6 +166,81 @@ MonoBehaviour:
   actorType: 0
   targetType: 0
   target: {fileID: 0}
+  velocity: {x: 0, y: 0, z: 0}
   speed: 0
   bulletDamage: 0
   lifetime: 10
+--- !u!1001 &6335046475802886937
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 744784604591963645}
+    m_Modifications:
+    - target: {fileID: 744784604591963645, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744784604591963645, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744784604591963645, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744784604591963645, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 744784604591963645, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744784604591963645, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744784604591963645, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744784604591963645, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744784604591963645, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 744784604591963645, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 783463981584913138, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_Name
+      value: FireBallBullet1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9328c4dc0dfadd84d8e22dac56cc2baa, type: 3}
+--- !u!4 &6754443494467600100 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 744784604591963645, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+    type: 3}
+  m_PrefabInstance: {fileID: 6335046475802886937}
+  m_PrefabAsset: {fileID: 0}
