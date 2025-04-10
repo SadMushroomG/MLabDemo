@@ -25,6 +25,9 @@ public class ActorManager : MonoBehaviour
     [LabelText("蓝方棋子")]
     public GameObject actorBlue;
 
+    private int baseHealthAdd = 0;
+    private int baseDamageAdd = 0;
+
     [Header("Spawn Area Settings")]
     //[LabelText("生成区域宽度")]
     //[SerializeField] private float spawnAreaWidth = 10f;
@@ -198,7 +201,11 @@ public class ActorManager : MonoBehaviour
         GameObject actor = actorType == MLabActorType.chessRed ? actorRed : actorBlue;
 
         var instance = Instantiate(actor, targetPosition, Quaternion.identity);
-
+        var actorBase = instance.GetComponent<ActorBase>();
+        actorBase.maxHealth += baseHealthAdd;
+        actorBase.currentHealth += baseHealthAdd;
+        actorBase.weapons[0].damage += baseDamageAdd;
+        
         if (actorType == MLabActorType.PlayerB)
         {
             blueActorList.Add(instance);
@@ -299,6 +306,46 @@ public class ActorManager : MonoBehaviour
     {
         var pos = redActorList[Random.Range(0, redActorList.Count)].transform.position;
         return pos;
+    }
+
+    public void MakeEverthingBetter(int waveCount)
+    {
+        if (waveCount < 3)
+        {
+            foreach (var actor in redActorList)
+            {
+                actor.GetComponent<ActorBase>().AddHealth(10);
+                actor.GetComponent<ActorBase>().AddDamage(2);
+            }
+
+            foreach (var actor in blueActorList)
+            {
+                actor.GetComponent<ActorBase>().AddHealth(10);
+                actor.GetComponent<ActorBase>().AddDamage(2);
+            }
+
+            GameMain.Instance.redSpawn.AddDamage(2);
+            baseHealthAdd += 10;
+            baseDamageAdd += 2;
+        }
+        else
+        {
+            foreach (var actor in redActorList)
+            {
+                actor.GetComponent<ActorBase>().AddHealth(15);
+                actor.GetComponent<ActorBase>().AddDamage(5);
+            }
+
+            foreach (var actor in blueActorList)
+            {
+                actor.GetComponent<ActorBase>().AddHealth(15);
+                actor.GetComponent<ActorBase>().AddDamage(5);
+            }
+
+            GameMain.Instance.redSpawn.AddDamage(5);
+            baseHealthAdd += 15;
+            baseDamageAdd += 5;
+        }
     }
 
 #if UNITY_EDITOR

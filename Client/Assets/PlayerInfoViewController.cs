@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 
 public class PlayerInfoViewController : BaseViewController
 {
@@ -19,6 +18,7 @@ public class PlayerInfoViewController : BaseViewController
 
     private GameObject winView;
     private GameObject loseView;
+    private GameObject ToastText;
 
     private bool isTextInit = false;
     public override void Init()
@@ -38,6 +38,7 @@ public class PlayerInfoViewController : BaseViewController
 
             loseView = binder.nodeList[6].node;
             winView = binder.nodeList[7].node;
+            ToastText = binder.nodeList[8].node;
 
             loseView.GetComponent<Button>().onClick.AddListener(() =>
             {
@@ -129,4 +130,16 @@ public class PlayerInfoViewController : BaseViewController
         GameMain.Instance.blueSpawn.IsStateDirty = false;
         isTextInit = true;
     }
+
+    public void ShowToast(string text)
+    {
+        ToastText.SetActive(true);
+        ToastText.GetComponentInChildren<TMP_Text>().text = text;
+    }
+
+    public void HideToast()
+    {
+        ToastText.SetActive(false);
+    }
+
 }

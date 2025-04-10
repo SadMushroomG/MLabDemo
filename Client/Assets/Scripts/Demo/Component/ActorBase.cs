@@ -272,4 +272,15 @@ public class ActorBase : MonoBehaviour
         }
     
     }
+
+
+    public void AddHealth(int value)
+    { 
+        currentHealth = Mathf.Clamp(currentHealth + value, 0, maxHealth);
+    }
+
+    public void AddDamage(int damage)
+    { 
+        weapons[0].damage += damage;
+    }
 }
