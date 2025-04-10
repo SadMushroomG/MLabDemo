@@ -502,6 +502,149 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35848954}
   m_CullTransparentMesh: 1
+--- !u!21 &50884049
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: '[Copy]mtvx_actor_dead_1'
+  m_Shader: {fileID: 4800000, guid: eaf3b94350cc5814ea2310c31ae2c478, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _BLEND_ALPHABLEND
+  - _DIRECTIONENUM_X
+  - _MASKMODE_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ChangeTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveDirection:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Gradient:
+        m_Texture: {fileID: 2800000, guid: 121ec8a4d2dac7045b57cb378af1eb2e, type: 3}
+        m_Scale: {x: 0.5, y: 0.7}
+        m_Offset: {x: 0, y: -0.33}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WarpTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaveTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClipThreshold: 0.001
+    - _Angle: 0
+    - _BendStrength: 0
+    - _Blend: 0
+    - _BlendOp: 0
+    - _ChangeAmount: 0
+    - _ChangeColorPow: 1
+    - _ColorMask: 15
+    - _ColorMoveSpdX: 0
+    - _ColorRot: 0
+    - _ColorRotSpd: 0
+    - _Cull: 2
+    - _DiffDirection: 0
+    - _DiffSmoothMax: 0.7
+    - _DiffSmoothMin: 0.3
+    - _DirectionEnum: 0
+    - _DirectionWithoutTexture: 0
+    - _DissolveScale: 1
+    - _DissolveWidth: 0.5
+    - _DisturbanceGradient: 0
+    - _DisturbanceGradientIntensity: 0
+    - _DisturbanceGradientSpd: 0
+    - _DstBlend: 10
+    - _EnableExternalAlpha: 0
+    - _EndPos: 1
+    - _M_Offset_Xspeed: 0
+    - _M_Offset_Yspeed: 0
+    - _M_Rot_Center_X: 0.5
+    - _M_Rot_Center_Y: 0.5
+    - _MainColorPow: 1
+    - _MainPolar: 0
+    - _MainTexRot: 0
+    - _MainTexRotSpeed: 0
+    - _MaskMode: 0
+    - _MaskOnly: 0
+    - _MaskRot: 0
+    - _MaskRotSpeed: 0
+    - _MaskScale: 1
+    - _MaskSmoothstepMax: 1
+    - _MaskSmoothstepMin: 0
+    - _Mask_Offset_Xspeed: 0
+    - _Mask_Offset_Yspeed: 0
+    - _RasAlpha: 0
+    - _Softness: 0
+    - _SrcBlend: 5
+    - _StartPos: 0
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _TwistStrength: 0
+    - _UseUIAlphaClip: 0
+    - _WarpMove: 0.5
+    - _WarpPolar: 0
+    - _WarpRot: 0
+    - _WarpRotSpeed: 0
+    - _Warp_Intensity: 0
+    - _Warp_Offset_Xspeed: 0
+    - _Warp_Offset_Yspeed: 0
+    - _WaveMove: 0.5
+    - _WaveOffsetSpeed_X: 0
+    - _WaveOffsetSpeed_Y: 0
+    - _WavePow: 0
+    - _WaveRotateSpeed: 0
+    - _ZTest: 0
+    - _ZWrite: 0
+    m_Colors:
+    - _ChangeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &58422691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -928,7 +1071,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 175207350}
-  - {fileID: 1571451807}
+  - {fileID: 1662214027}
   - {fileID: 1529290681}
   m_Father: {fileID: 618428032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -975,9 +1118,9 @@ MonoBehaviour:
   curExpMaxValue: 100
   expValue: 1
   weapons:
-  - {fileID: 1571451806}
-  mainWeapon: {fileID: 1571451806}
-  skillWeapon: {fileID: 1571451806}
+  - {fileID: 1662214028}
+  mainWeapon: {fileID: 1662214028}
+  skillWeapon: {fileID: 1662214028}
   skillWeaponProgress: {fileID: 1529290682}
   useAnimation: 0
   attackAnimationTrigger: Attack
@@ -3223,149 +3366,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469957026}
   m_CullTransparentMesh: 1
---- !u!21 &496178127
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: '[Copy]mtvx_actor_dead_1'
-  m_Shader: {fileID: 4800000, guid: eaf3b94350cc5814ea2310c31ae2c478, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _BLEND_ALPHABLEND
-  - _DIRECTIONENUM_X
-  - _MASKMODE_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ChangeTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ColorTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DissolveDirection:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Gradient:
-        m_Texture: {fileID: 2800000, guid: 121ec8a4d2dac7045b57cb378af1eb2e, type: 3}
-        m_Scale: {x: 0.5, y: 0.7}
-        m_Offset: {x: 0, y: -0.33}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _WarpTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _WaveTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AlphaClipThreshold: 0.001
-    - _Angle: 0
-    - _BendStrength: 0
-    - _Blend: 0
-    - _BlendOp: 0
-    - _ChangeAmount: 0
-    - _ChangeColorPow: 1
-    - _ColorMask: 15
-    - _ColorMoveSpdX: 0
-    - _ColorRot: 0
-    - _ColorRotSpd: 0
-    - _Cull: 2
-    - _DiffDirection: 0
-    - _DiffSmoothMax: 0.7
-    - _DiffSmoothMin: 0.3
-    - _DirectionEnum: 0
-    - _DirectionWithoutTexture: 0
-    - _DissolveScale: 1
-    - _DissolveWidth: 0.5
-    - _DisturbanceGradient: 0
-    - _DisturbanceGradientIntensity: 0
-    - _DisturbanceGradientSpd: 0
-    - _DstBlend: 10
-    - _EnableExternalAlpha: 0
-    - _EndPos: 1
-    - _M_Offset_Xspeed: 0
-    - _M_Offset_Yspeed: 0
-    - _M_Rot_Center_X: 0.5
-    - _M_Rot_Center_Y: 0.5
-    - _MainColorPow: 1
-    - _MainPolar: 0
-    - _MainTexRot: 0
-    - _MainTexRotSpeed: 0
-    - _MaskMode: 0
-    - _MaskOnly: 0
-    - _MaskRot: 0
-    - _MaskRotSpeed: 0
-    - _MaskScale: 1
-    - _MaskSmoothstepMax: 1
-    - _MaskSmoothstepMin: 0
-    - _Mask_Offset_Xspeed: 0
-    - _Mask_Offset_Yspeed: 0
-    - _RasAlpha: 0
-    - _Softness: 0
-    - _SrcBlend: 5
-    - _StartPos: 0
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _TwistStrength: 0
-    - _UseUIAlphaClip: 0
-    - _WarpMove: 0.5
-    - _WarpPolar: 0
-    - _WarpRot: 0
-    - _WarpRotSpeed: 0
-    - _Warp_Intensity: 0
-    - _Warp_Offset_Xspeed: 0
-    - _Warp_Offset_Yspeed: 0
-    - _WaveMove: 0.5
-    - _WaveOffsetSpeed_X: 0
-    - _WaveOffsetSpeed_Y: 0
-    - _WavePow: 0
-    - _WaveRotateSpeed: 0
-    - _ZTest: 0
-    - _ZWrite: 0
-    m_Colors:
-    - _ChangeColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!224 &507538241 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5352424158977602197, guid: 51d3aaf5b50d91f42ae8cdae2e268ad6,
@@ -3844,7 +3844,6 @@ Transform:
   m_Children:
   - {fileID: 408665532}
   - {fileID: 6525275}
-  - {fileID: 1662214027}
   - {fileID: 1928519716}
   m_Father: {fileID: 618428032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4441,149 +4440,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1536647884}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &775451737
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: '[Copy]mtvx_actor_dead_1'
-  m_Shader: {fileID: 4800000, guid: eaf3b94350cc5814ea2310c31ae2c478, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _BLEND_ALPHABLEND
-  - _DIRECTIONENUM_X
-  - _MASKMODE_ALPHA
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ChangeTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _ColorTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _DissolveDirection:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Gradient:
-        m_Texture: {fileID: 2800000, guid: 121ec8a4d2dac7045b57cb378af1eb2e, type: 3}
-        m_Scale: {x: 0.5, y: 0.7}
-        m_Offset: {x: 0, y: -0.33}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NormalMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _WarpTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _WaveTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _AlphaClipThreshold: 0.001
-    - _Angle: 0
-    - _BendStrength: 0
-    - _Blend: 0
-    - _BlendOp: 0
-    - _ChangeAmount: 0
-    - _ChangeColorPow: 1
-    - _ColorMask: 15
-    - _ColorMoveSpdX: 0
-    - _ColorRot: 0
-    - _ColorRotSpd: 0
-    - _Cull: 2
-    - _DiffDirection: 0
-    - _DiffSmoothMax: 0.7
-    - _DiffSmoothMin: 0.3
-    - _DirectionEnum: 0
-    - _DirectionWithoutTexture: 0
-    - _DissolveScale: 1
-    - _DissolveWidth: 0.5
-    - _DisturbanceGradient: 0
-    - _DisturbanceGradientIntensity: 0
-    - _DisturbanceGradientSpd: 0
-    - _DstBlend: 10
-    - _EnableExternalAlpha: 0
-    - _EndPos: 1
-    - _M_Offset_Xspeed: 0
-    - _M_Offset_Yspeed: 0
-    - _M_Rot_Center_X: 0.5
-    - _M_Rot_Center_Y: 0.5
-    - _MainColorPow: 1
-    - _MainPolar: 0
-    - _MainTexRot: 0
-    - _MainTexRotSpeed: 0
-    - _MaskMode: 0
-    - _MaskOnly: 0
-    - _MaskRot: 0
-    - _MaskRotSpeed: 0
-    - _MaskScale: 1
-    - _MaskSmoothstepMax: 1
-    - _MaskSmoothstepMin: 0
-    - _Mask_Offset_Xspeed: 0
-    - _Mask_Offset_Yspeed: 0
-    - _RasAlpha: 0
-    - _Softness: 0
-    - _SrcBlend: 5
-    - _StartPos: 0
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _TwistStrength: 0
-    - _UseUIAlphaClip: 0
-    - _WarpMove: 0.5
-    - _WarpPolar: 0
-    - _WarpRot: 0
-    - _WarpRotSpeed: 0
-    - _Warp_Intensity: 0
-    - _Warp_Offset_Xspeed: 0
-    - _Warp_Offset_Yspeed: 0
-    - _WaveMove: 0.5
-    - _WaveOffsetSpeed_X: 0
-    - _WaveOffsetSpeed_Y: 0
-    - _WavePow: 0
-    - _WaveRotateSpeed: 0
-    - _ZTest: 0
-    - _ZWrite: 0
-    m_Colors:
-    - _ChangeColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &776275454
 GameObject:
   m_ObjectHideFlags: 0
@@ -8318,6 +8174,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2088475889}
+  - {fileID: 1571451807}
   - {fileID: 1126297565}
   m_Father: {fileID: 618428032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8342,9 +8199,10 @@ MonoBehaviour:
   curExpValue: 0
   curExpMaxValue: 100
   expValue: 1
-  weapons: []
-  mainWeapon: {fileID: 0}
-  skillWeapon: {fileID: 0}
+  weapons:
+  - {fileID: 1571451806}
+  mainWeapon: {fileID: 1571451806}
+  skillWeapon: {fileID: 1571451806}
   skillWeaponProgress: {fileID: 1126297566}
   useAnimation: 0
   attackAnimationTrigger: Attack
@@ -9518,7 +9376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   attackRange: 2
-  attackCooldown: 1
+  attackCooldown: 10
   bulletSpeed: 1
   critRate: 0.05
   critDamage: 1.2
@@ -9540,11 +9398,11 @@ Transform:
   m_GameObject: {fileID: 1571451805}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.76, y: -0.544, z: 0}
+  m_LocalPosition: {x: -0.923, y: 0.946, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 147101631}
+  m_Father: {fileID: 1418751113}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1581369675
 GameObject:
@@ -9867,11 +9725,11 @@ Transform:
   m_GameObject: {fileID: 1662214026}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.976, y: 0.261, z: 0}
+  m_LocalPosition: {x: -0.76, y: -0.544, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 612007294}
+  m_Father: {fileID: 147101631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1662214028
 MonoBehaviour:
@@ -9888,7 +9746,7 @@ MonoBehaviour:
   damage: 50
   attackRange: 10
   attackCooldown: 5
-  bulletSpeed: 1
+  bulletSpeed: 2
   critRate: 0.05
   critDamage: 1.2
   attackEffectPrefab: {fileID: 783463981584913138, guid: 843a857eb3690d54885f58b291373a57,
@@ -11572,6 +11430,149 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075151712}
   m_CullTransparentMesh: 1
+--- !u!21 &2081637499
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: '[Copy]mtvx_actor_dead_1'
+  m_Shader: {fileID: 4800000, guid: eaf3b94350cc5814ea2310c31ae2c478, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _BLEND_ALPHABLEND
+  - _DIRECTIONENUM_X
+  - _MASKMODE_ALPHA
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ChangeTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveDirection:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Gradient:
+        m_Texture: {fileID: 2800000, guid: 121ec8a4d2dac7045b57cb378af1eb2e, type: 3}
+        m_Scale: {x: 0.5, y: 0.7}
+        m_Offset: {x: 0, y: -0.33}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WarpTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaveTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AlphaClipThreshold: 0.001
+    - _Angle: 0
+    - _BendStrength: 0
+    - _Blend: 0
+    - _BlendOp: 0
+    - _ChangeAmount: 0
+    - _ChangeColorPow: 1
+    - _ColorMask: 15
+    - _ColorMoveSpdX: 0
+    - _ColorRot: 0
+    - _ColorRotSpd: 0
+    - _Cull: 2
+    - _DiffDirection: 0
+    - _DiffSmoothMax: 0.7
+    - _DiffSmoothMin: 0.3
+    - _DirectionEnum: 0
+    - _DirectionWithoutTexture: 0
+    - _DissolveScale: 1
+    - _DissolveWidth: 0.5
+    - _DisturbanceGradient: 0
+    - _DisturbanceGradientIntensity: 0
+    - _DisturbanceGradientSpd: 0
+    - _DstBlend: 10
+    - _EnableExternalAlpha: 0
+    - _EndPos: 1
+    - _M_Offset_Xspeed: 0
+    - _M_Offset_Yspeed: 0
+    - _M_Rot_Center_X: 0.5
+    - _M_Rot_Center_Y: 0.5
+    - _MainColorPow: 1
+    - _MainPolar: 0
+    - _MainTexRot: 0
+    - _MainTexRotSpeed: 0
+    - _MaskMode: 0
+    - _MaskOnly: 0
+    - _MaskRot: 0
+    - _MaskRotSpeed: 0
+    - _MaskScale: 1
+    - _MaskSmoothstepMax: 1
+    - _MaskSmoothstepMin: 0
+    - _Mask_Offset_Xspeed: 0
+    - _Mask_Offset_Yspeed: 0
+    - _RasAlpha: 0
+    - _Softness: 0
+    - _SrcBlend: 5
+    - _StartPos: 0
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _TwistStrength: 0
+    - _UseUIAlphaClip: 0
+    - _WarpMove: 0.5
+    - _WarpPolar: 0
+    - _WarpRot: 0
+    - _WarpRotSpeed: 0
+    - _Warp_Intensity: 0
+    - _Warp_Offset_Xspeed: 0
+    - _Warp_Offset_Yspeed: 0
+    - _WaveMove: 0.5
+    - _WaveOffsetSpeed_X: 0
+    - _WaveOffsetSpeed_Y: 0
+    - _WavePow: 0
+    - _WaveRotateSpeed: 0
+    - _ZTest: 0
+    - _ZWrite: 0
+    m_Colors:
+    - _ChangeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &2088475888
 GameObject:
   m_ObjectHideFlags: 0
