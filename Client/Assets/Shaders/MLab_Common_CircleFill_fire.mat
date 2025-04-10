@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MLab_Common_CircleFill
+  m_Name: MLab_Common_CircleFill_fire
   m_Shader: {fileID: 4800000, guid: cd029e799cfd4b745a25278ac0e9f4fa, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,9 +24,9 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _IconTex:
-        m_Texture: {fileID: 2800000, guid: 310ea090249ae474098bc5bafa958681, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Texture: {fileID: 2800000, guid: 16717cd5b62f576418394bacb9a5a1c1, type: 3}
+        m_Scale: {x: 1.26, y: 1.26}
+        m_Offset: {x: -0.13, y: -0.13}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -34,7 +34,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _ColorMask: 15
-    - _Progress: 0.416
+    - _Progress: 0.504
     - _StartAngle: 0.75
     - _Stencil: 0
     - _StencilComp: 8

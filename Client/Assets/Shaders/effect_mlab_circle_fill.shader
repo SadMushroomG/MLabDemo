@@ -3,6 +3,7 @@ Shader "MLab/Common/CircleFill"
 	Properties  
 	{  
 		[PerRendererData] _MainTex("_MainTex", 2D) = "white" {}  
+		_IconTex("_IconTex",2D) = "white"{}
 		
 		_Progress("_Progress(圆环填充百分比)", Range(0, 1)) = 0  
 		_StartAngle("_StartAngle(起始角度)", Range(0, 1)) = 0  
@@ -73,16 +74,18 @@ Shader "MLab/Common/CircleFill"
 			struct v2f  
 			{  
 				half4 vertex   : SV_POSITION;  
-				float2 texcoord  : TEXCOORD0;  
+				float4 texcoord  : TEXCOORD0;  
 				float2 worldPosition : TEXCOORD1;  
                 fixed4 vertexColor : COLOR;  
 				//UNITY_VERTEX_OUTPUT_STEREO  
 			};  
 
 			sampler2D _MainTex;  
+			sampler2D _IconTex;
 			half4 _ClipRect;  
 			CBUFFER_START(UnityPerMaterial)  
 				half4 _MainTex_ST;  
+				float4 _IconTex_ST;
 				half4 _Color;  
 				fixed _Progress;  
 				fixed _StartAngle;  
@@ -94,7 +97,8 @@ Shader "MLab/Common/CircleFill"
 				OUT.worldPosition = v.vertex.xy;  
 				OUT.vertex = UnityObjectToClipPos(v.vertex);  
 
-				OUT.texcoord = TRANSFORM_TEX(v.texcoord, _MainTex);  
+				OUT.texcoord.xy = TRANSFORM_TEX(v.texcoord, _MainTex);  
+				OUT.texcoord.zw = TRANSFORM_TEX(v.texcoord, _IconTex);  
 				OUT.vertexColor = v.vertexColor;  
 				return OUT;  
 			}  
@@ -118,7 +122,11 @@ Shader "MLab/Common/CircleFill"
 					return 0;  
 				}  
 
-				float4 color = tex2D(_MainTex, IN.texcoord);  
+				float4 icon_color = tex2D(_IconTex,IN.texcoord.zw);
+				float icon_gray = 0.299 * icon_color.r + 0.587 * icon_color.g + 0.114 * icon_color.b;
+				float4 color = lerp(IN.vertexColor,float4(icon_gray,icon_gray,icon_gray,icon_gray),icon_color.a);
+
+				color.a = tex2D(_MainTex, IN.texcoord.xy).a;  
 
 				#ifdef UNITY_UI_ALPHACLIP  
 					if(color.a < 0.001)  
@@ -127,7 +135,7 @@ Shader "MLab/Common/CircleFill"
 					}  
 				#endif  
 
-				return color*IN.vertexColor;  
+				return color;  
 			}  
 		ENDCG  
 		}  
