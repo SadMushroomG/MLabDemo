@@ -163,6 +163,7 @@ public class ActorBase : MonoBehaviour
     //TOFix:连升多级的情况
     public virtual void GetExp(float exp)
     {
+        return;
         MLabUtils.DebugLog(this.name + " GetExp: " + exp);
         curExpValue += exp;
         if (curExpValue >= curExpMaxValue)
