@@ -237,7 +237,7 @@ public class WeaponBase : MonoBehaviour
         return false;
     }
 
-    public float GetColdDownProgress()
+    public virtual float GetColdDownProgress()
     {
         return Mathf.Clamp01((GameMain.globalTime - lastAttackTime) / (attackCooldown / attackCooldownMultiParam));
     }
