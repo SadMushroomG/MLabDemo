@@ -22,6 +22,7 @@ public class CardPoolViewContoller : BaseViewController
 
     public override void Show()
     {
+        base.Show();
         //Time.timeScale = 0f; // 暂停游戏
         if (canvasRoot != null)
         {
@@ -40,6 +41,7 @@ public class CardPoolViewContoller : BaseViewController
 
     public override void Hide()
     {
+        base.Hide();
         Time.timeScale = 1f; // 暂停游戏
 
         if (canvasRoot != null)
