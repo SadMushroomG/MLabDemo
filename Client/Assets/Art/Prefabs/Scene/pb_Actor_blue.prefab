@@ -5496,7 +5496,7 @@ MonoBehaviour:
   bulletSpeed: 1.5
   critRate: 0.05
   critDamage: 1.2
-  attackEffectPrefab: {fileID: 7695393459228443414, guid: 10affea1a5c157241aa8e0355551629b,
+  attackEffectPrefab: {fileID: 7695393459228443414, guid: 34be12c47a6446644936b4be5cee6614,
     type: 3}
   effectDuration: 0.5
   target: {fileID: 0}
