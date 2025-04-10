@@ -48,6 +48,14 @@ public class ActorBase : MonoBehaviour
     [LabelText("主武器")]
     [SerializeField] public WeaponBase mainWeapon;
 
+    [BoxGroup("攻击")]
+    [LabelText("技能武器")]
+    [SerializeField] public WeaponBase skillWeapon;
+
+    [BoxGroup("攻击")]
+    [LabelText("技能武器冷却时间")]
+    [SerializeField] public ProgressBarComponent skillWeaponProgress;
+
     [BoxGroup("动画")]
     [LabelText("使用动画")]
     [SerializeField] protected bool useAnimation = false;
@@ -130,6 +138,11 @@ public class ActorBase : MonoBehaviour
         { 
             mainWeapon = weapons[0];
         }
+
+        if(weapons.Count > 1)
+        {
+            skillWeapon = weapons[1];
+        }
     }
 
     #region 伤害
@@ -177,6 +190,11 @@ public class ActorBase : MonoBehaviour
                 lastScale = scaleX;
             }
             lastPosisiton = transform.position;
+        }
+
+        if (skillWeapon != null && skillWeaponProgress!=null)
+        { 
+            skillWeaponProgress.Progress = 1 - skillWeapon.GetColdDownProgress();
         }
     }
 

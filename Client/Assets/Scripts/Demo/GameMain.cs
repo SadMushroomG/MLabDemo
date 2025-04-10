@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -24,7 +25,11 @@ public class GameMain : MonoBehaviour
     public Transform bulletRoot;
 
     public TMP_Text updateTipText;
-    private string updateTip = "下次升级 ";
+
+    public TMP_Text waveText;
+    
+    public int waveCount = 1;
+
     public float updateCountDownTime = 30;
 
     public enum GameStateEnum
@@ -95,6 +100,15 @@ public class GameMain : MonoBehaviour
         InitModules();
     }
 
+    public void InitGame()
+    {
+        gameState = GameStateEnum.Gameing;
+        globalTime = 0;
+        deltaTime = 0;
+        updateCountDownTime = 15;
+        SetWaveCount(1);
+    }
+
     void Update()
     {
         if (gameState == GameStateEnum.Gameing)
@@ -114,7 +128,7 @@ public class GameMain : MonoBehaviour
             }
             else
             {
-                updateTipText.text = updateTip + (int)updateCountDownTime;
+                updateTipText.text = TimeSpan.FromSeconds(updateCountDownTime).ToString(@"mm\:ss");
             }
         }
         else
@@ -135,6 +149,7 @@ public class GameMain : MonoBehaviour
     public void ResumeGame()
     {
         gameState = GameStateEnum.Gameing;
+        SetWaveCount(waveCount + 1);
         updateCountDownTime = 30;
     }
 
@@ -154,13 +169,25 @@ public class GameMain : MonoBehaviour
         {
             //TODO胜利结算
             //Debug.Log("蓝方胜利");
-            gameState = GameStateEnum.GameOver;  
+            gameState = GameStateEnum.GameOver; 
+            Time.timeScale = 0f;
+            if (controllerDic.ContainsKey("PlayerInfoViewController"))
+            {
+                var infoView = controllerDic["PlayerInfoViewController"] as PlayerInfoViewController;
+                infoView.ShowWinView();
+            }
         }
         else if (blueSpawn.currentHealth <= 0)
         {
             //TODO胜利结算
             //Debug.Log("红方胜利");
-            gameState = GameStateEnum.GameOver;  
+            gameState = GameStateEnum.GameOver;
+            Time.timeScale = 0f;
+            if (controllerDic.ContainsKey("PlayerInfoViewController"))
+            {
+                var infoView = controllerDic["PlayerInfoViewController"] as PlayerInfoViewController;
+                infoView.ShowLoseView();
+            }
         }
     }
 
@@ -183,6 +210,11 @@ public class GameMain : MonoBehaviour
         infoViewController.Show();
     }
 
+    public void SetWaveCount(int waveCount)
+    { 
+        this.waveCount = waveCount;
+        waveText.text = "WAVE " + waveCount.ToString();
+    }
 
     #region
     private static string cardConfigPath = "Assets/Scripts/Demo/Configs/CardDataConfig.asset";
