@@ -151,6 +151,21 @@ public class GameMain : MonoBehaviour
         gameState = GameStateEnum.Gameing;
         SetWaveCount(waveCount + 1);
         updateCountDownTime = 30;
+        if (controllerDic.ContainsKey("PlayerInfoViewController"))
+        {
+            var infoView = controllerDic["PlayerInfoViewController"] as PlayerInfoViewController;
+            infoView.ShowToast("~敌人好像也变强了~");
+            StartCoroutine(DelayedHideToast(infoView));
+
+            DelayedHideToast(infoView);
+        }
+        ActorManager.Instance.MakeEverthingBetter(waveCount);
+    }
+
+    private IEnumerator DelayedHideToast(PlayerInfoViewController infoView)
+    {
+        yield return new WaitForSeconds(2f);
+        infoView.HideToast();
     }
 
     private void Start()
