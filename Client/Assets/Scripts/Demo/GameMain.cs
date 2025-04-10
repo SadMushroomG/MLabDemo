@@ -109,6 +109,18 @@ public class GameMain : MonoBehaviour
         SetWaveCount(1);
     }
 
+    private IEnumerator PauseGameAfterDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        if (controllerDic.ContainsKey("CardPoolViewContoller"))
+        {
+            if (controllerDic["CardPoolViewContoller"].isShow)
+            { 
+                Time.timeScale = 0f; // 暂停游戏
+            }
+        }
+    }
+
     void Update()
     {
         if (gameState == GameStateEnum.Gameing)
@@ -124,6 +136,7 @@ public class GameMain : MonoBehaviour
                 if(controllerDic.ContainsKey("CardPoolViewContoller"))
                 {
                     controllerDic["CardPoolViewContoller"].Show();
+                    StartCoroutine(PauseGameAfterDelay(1f));
                 }
             }
             else

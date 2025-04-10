@@ -18,10 +18,11 @@ public class CardPoolViewContoller : BaseViewController
         canvasRoot.GetComponentsInChildren<CardComponent>(true, cardComponentList);
     }
 
+
+
     public override void Show()
     {
-        Time.timeScale = 0f; // 暂停游戏
-
+        //Time.timeScale = 0f; // 暂停游戏
         if (canvasRoot != null)
         {
             canvasRoot.SetActive(true);
