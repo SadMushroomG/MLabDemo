@@ -14,6 +14,16 @@ public class XiaoBingBuff : WeaponBase
     {
         // 不需要普通攻击功能
     }
+    protected override void SpawnAttackEffect(GameObject target)
+    {
+        if (attackEffectPrefab != null)
+        { 
+            GameObject effect = Instantiate(attackEffectPrefab, transform.position, Quaternion.identity);
+            effect.transform.parent = GameMain.GetBulletRoot();
+            effect.transform.localScale = Vector3.one;
+            effect.gameObject.SetActive(true);
+        }
+    }
 
     protected override bool CheckAndAttack(float distanceToTarget)
     {
@@ -28,6 +38,7 @@ public class XiaoBingBuff : WeaponBase
         {
             ApplyBuffToAllSoldiers();
             lastBuffTime = GameMain.globalTime;
+            SpawnAttackEffect(null);
         }
     }
 
