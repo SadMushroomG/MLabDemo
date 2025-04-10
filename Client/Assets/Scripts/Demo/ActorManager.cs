@@ -330,7 +330,7 @@ public class ActorManager : MonoBehaviour
                 //actor.GetComponent<ActorBase>().AddDamage(2);
             }
 
-            GameMain.Instance.redSpawn.AddDamage(2);
+            GameMain.Instance.redSpawn.AddDamage(5);
             baseHealthAdd += 10;
             baseDamageAdd += 2;
         }
@@ -348,7 +348,7 @@ public class ActorManager : MonoBehaviour
                 //actor.GetComponent<ActorBase>().AddDamage(5);
             }
 
-            GameMain.Instance.redSpawn.AddDamage(5);
+            GameMain.Instance.redSpawn.AddDamage(8);
             baseHealthAdd += 15;
             baseDamageAdd += 5;
         }
