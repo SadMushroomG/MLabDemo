@@ -384,11 +384,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: fea6b193e3734cc45ad6d2bcfbfe60bc,
         type: 3}
-    - target: {fileID: 5971931044776404030, guid: c1abf6da1fce56b47abd2387a0d206bb,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8598151063753775267, guid: c1abf6da1fce56b47abd2387a0d206bb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -416,10 +411,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4158556590522436206}
-    - targetCorrespondingSourceObject: {fileID: 8776277384463900305, guid: c1abf6da1fce56b47abd2387a0d206bb,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5961863403885111764}
   m_SourcePrefab: {fileID: 100100000, guid: c1abf6da1fce56b47abd2387a0d206bb, type: 3}
 --- !u!1 &497683935728629454 stripped
 GameObject:
@@ -453,62 +444,6 @@ MonoBehaviour:
   attacked: 0
   detectionRadius: 10
   targetUpdateInterval: 0.5
---- !u!212 &1955709222070174443 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 5971931044776404030, guid: c1abf6da1fce56b47abd2387a0d206bb,
-    type: 3}
-  m_PrefabInstance: {fileID: 5315545576630429397}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3462992418242525252 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8776277384463900305, guid: c1abf6da1fce56b47abd2387a0d206bb,
-    type: 3}
-  m_PrefabInstance: {fileID: 5315545576630429397}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5961863403885111764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3462992418242525252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f25249d7c51ff44ca6be52a05d4af9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controlOtherObject: 0
-  targetObject: {fileID: 0}
-  matOrigin: {fileID: 2100000, guid: d2a9fe18c11c93c42af37dec238c7c77, type: 2}
-  matCurrent: {fileID: 0}
-  image: {fileID: 0}
-  render: {fileID: 1955709222070174443}
-  tmPro: {fileID: 0}
-  isDifferent: 1
-  isControl: 1
-  _stringF1: _ChangeAmount
-  _stringF2: 
-  _stringF3: 
-  _stringF4: 
-  _stringF5: 
-  _float1: 0
-  _float2: 0
-  _float3: 0
-  _float4: 0
-  _float5: 0
-  _stringKW1: 
-  _stringKW2: 
-  _keywordVal1: 0
-  _keywordVal2: 0
-  _stringV1: 
-  _stringV2: 
-  _vector1: {x: 1, y: 1, z: 0, w: 0}
-  _vector2: {x: 1, y: 1, z: 0, w: 0}
-  _vectoring: {x: 1, y: 1, z: 0, w: 0}
-  _stringC1: 
-  _stringC2: 
-  _color1: {r: 1, g: 1, b: 1, a: 1}
-  _color2: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &5476239306554198443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 160755383718473598, guid: c1abf6da1fce56b47abd2387a0d206bb,
