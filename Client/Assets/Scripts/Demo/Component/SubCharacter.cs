@@ -21,6 +21,16 @@ public class SubCharacter : ActorBase
     {
         curState = SubCharacterState.Idle;
         deltaTime = idleDeltaTime;
+
+
+        for (int i = 0; i < weapons.Count; i++)
+        {
+            WeaponBase weapon = weapons[i];
+            if (weapon != null)
+            {
+                weapon.SetOwner(this);
+            }
+        }
     }
     protected override void Update()
     {
