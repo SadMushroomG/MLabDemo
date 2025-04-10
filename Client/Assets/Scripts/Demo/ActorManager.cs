@@ -266,7 +266,13 @@ public class ActorManager : MonoBehaviour
             AddSeed(actorType, actor.transform.position);
             //redSpawnCount += 2;
         }
-        Destroy(actor);
+        
+        actor.GetComponent<ActorBase>().enabled = false;
+        var animator = actor.GetComponent<ActorBase>().GetComponentInChildren<Animator>();
+        animator.SetTrigger("dead");
+
+        StartCoroutine(DestroyActorWithDelay(actor, 2f));
+        //Destroy(actor);
     }
 
 
@@ -359,6 +365,12 @@ public class ActorManager : MonoBehaviour
         //// Draw outline
         //Gizmos.color = Color.green;
         //Gizmos.DrawWireCube(center, new Vector3(spawnAreaWidth, spawnAreaHeight, 0.1f));
+    }
+
+    private IEnumerator DestroyActorWithDelay(GameObject actor, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(actor);
     }
 #endif
 }

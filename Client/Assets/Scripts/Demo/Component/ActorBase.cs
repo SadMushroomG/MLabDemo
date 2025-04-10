@@ -83,6 +83,7 @@ public class ActorBase : MonoBehaviour
     private Vector3 lastPosisiton;
 
     private bool isStateDirty = false;
+
     public bool IsStateDirty
     {
         get { return isStateDirty; }
@@ -150,6 +151,12 @@ public class ActorBase : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.UpdateHealth(currentHealth);
+
+        if (animator == null)
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
+        animator.SetTrigger("attack");
     }
     #endregion
 
@@ -272,7 +279,6 @@ public class ActorBase : MonoBehaviour
         }
     
     }
-
 
     public void AddHealth(int value)
     { 
