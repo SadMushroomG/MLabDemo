@@ -178,6 +178,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 744784604591963645}
     m_Modifications:
+    - target: {fileID: 9016555683961272, guid: 9328c4dc0dfadd84d8e22dac56cc2baa, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016555683961272, guid: 9328c4dc0dfadd84d8e22dac56cc2baa, type: 3}
+      propertyPath: m_SortingOrder
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 9016555683961272, guid: 9328c4dc0dfadd84d8e22dac56cc2baa, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1138276447
+      objectReference: {fileID: 0}
     - target: {fileID: 744784604591963645, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -232,6 +244,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FireBallBullet1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072791167107906812, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072791167107906812, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2072791167107906812, guid: 9328c4dc0dfadd84d8e22dac56cc2baa,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1138276447
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
