@@ -295,6 +295,11 @@ public class ActorManager : MonoBehaviour
         }
     }
 
+    public Vector3 GetRandomRedActorPosition()
+    {
+        var pos = redActorList[Random.Range(0, redActorList.Count)].transform.position;
+        return pos;
+    }
 
 #if UNITY_EDITOR
     private void OnDrawGizmosSelected()

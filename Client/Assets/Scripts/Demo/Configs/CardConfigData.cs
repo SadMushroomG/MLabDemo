@@ -67,6 +67,7 @@ public class CardData
 [Serializable]
 public class BuffData
 {
+    public int buffId = 0;
     public BuffType buffType;
     public BuffCalculateType buffCalculateType;
     public BuffCalculateFunction buffFunction;
@@ -75,6 +76,8 @@ public class BuffData
 
 public enum BuffType
 {
+    [LabelText("Use Id")]
+    UseId,
     [LabelText("攻击")]
     Attack,
     [LabelText("暴击率")]

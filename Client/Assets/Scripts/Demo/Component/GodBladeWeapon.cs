@@ -3,29 +3,27 @@ using UnityEngine;
 public class GodBladeWeapon : WeaponBase
 {
     public int bladeCount = 3;
-    public float fireBallScale = 1.5f;
-    
     public float explosionRadius = 3f;
     public float generateRadius = 3f;
 
+    private static Vector3 MoveDir = new Vector3(0.707f, 0.707f, 0);
     protected override void SpawnAttackEffect(GameObject target)
     {
         if (attackEffectPrefab != null)
         {
             for (int i = 0; i < bladeCount; i++)
             {
-                var offsetX = Random.Range(-1,6);
-                var offsetY = Random.Range(5, 10);
-                var pos = new Vector3(offsetX, 5, transform.position.z);
+                var actorPos = ActorManager.Instance.GetRandomRedActorPosition();
+                var startPos = MoveDir * bulletSpeed + actorPos;
 
-                GameObject effect = Instantiate(attackEffectPrefab, pos, Quaternion.identity);
+                GameObject effect = Instantiate(attackEffectPrefab, startPos, Quaternion.identity);
                 effect.transform.parent = GameMain.GetBulletRoot();
-                effect.transform.localScale = Vector3.one * fireBallScale;
+                effect.transform.localScale = Vector3.one;
 
                 BulletBase bullet = effect.GetComponent<BulletBase>();
                 bullet.Initialize(target, bulletSpeed, damage + DamageAdd, owner.actorType, this);
                 bulletList.Add(bullet);
-                bullet.velocity = Vector3.down * bulletSpeed;
+                bullet.velocity = -MoveDir * bulletSpeed;
             }
         }
     }

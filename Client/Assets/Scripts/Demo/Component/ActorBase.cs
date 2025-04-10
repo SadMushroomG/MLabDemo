@@ -242,8 +242,34 @@ public class ActorBase : MonoBehaviour
                         mainWeapon.AttackCooldownMultiParam *= ( 1 + buffValue);
                     }
                     break;
+
+                case BuffType.UseId:
+                    ApplyBuffById(buff.buffId);
+                    break;
             }
         }
         isStateDirty = true;
+    }
+
+    private void ApplyBuffById(int buffId)
+    {
+        switch (buffId)
+        {
+            case 3001: // 神罚加暴击率20%
+                if (weapons[1] is GodBladeWeapon)
+                {
+                    var weapon = weapons[1] as GodBladeWeapon;
+                    weapon.CritRateAdd += 0.2f;
+                }
+                break;
+            case 3002:
+                if (weapons[1] is GodBladeWeapon)
+                {
+                    var weapon = weapons[1] as GodBladeWeapon;
+                    weapon.bladeCount += 1;
+                }
+                break;
+        }
+    
     }
 }
