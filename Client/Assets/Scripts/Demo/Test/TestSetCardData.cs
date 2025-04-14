@@ -59,8 +59,8 @@ public class TestCardData
 [ExecuteAlways]
 public class TestSetCardData : MonoBehaviour
 {
-    private static string configPath = "Assets/Scripts/Demo/Configs/CardDataConfig.asset";
-    private static CardDataConfig config;
+    private static string configPath = "Configs/CardDataConfig"; // Resources 文件夹中的路径（不带扩展名
+    private static CardConfigData config;
 
     [TableList(ShowIndexLabels = false)]
     public List<TestCardData> cardDataList = new List<TestCardData>();
@@ -70,8 +70,9 @@ public class TestSetCardData : MonoBehaviour
     private void OnEnable()
     {
         if (config == null)
-        { 
-            config = AssetDatabase.LoadAssetAtPath<CardDataConfig>(configPath);
+        {
+            // 使用 Resources.Load 在运行时加载资源
+            config = Resources.Load<CardConfigData>(configPath);
         }
         cardDataList.Clear();
         for ( int i = 0; i < config.cardDataList.Count; i++)

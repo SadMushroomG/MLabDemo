@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Card Config", menuName = "M-Game Data/Card Data")]
-public class CardDataConfig : ScriptableObject
+public class CardConfigData : ScriptableObject
 {
     [TableList(ShowIndexLabels = false)]
     public List<CardData> cardDataList = new();

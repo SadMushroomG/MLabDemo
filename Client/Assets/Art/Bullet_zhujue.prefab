@@ -183,6 +183,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Ammo_P
       objectReference: {fileID: 0}
+    - target: {fileID: 1078459783064478317, guid: ccc03989a95e1c444b5f221bc17cfe54,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078459783064478317, guid: ccc03989a95e1c444b5f221bc17cfe54,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078459783064478317, guid: ccc03989a95e1c444b5f221bc17cfe54,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1138276447
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260508582623184113, guid: ccc03989a95e1c444b5f221bc17cfe54,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260508582623184113, guid: ccc03989a95e1c444b5f221bc17cfe54,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1260508582623184113, guid: ccc03989a95e1c444b5f221bc17cfe54,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1138276447
+      objectReference: {fileID: 0}
     - target: {fileID: 2800542187060811090, guid: ccc03989a95e1c444b5f221bc17cfe54,
         type: 3}
       propertyPath: InitialModule.startSize.scalar

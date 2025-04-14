@@ -354,23 +354,23 @@ public class ActorManager : MonoBehaviour
         }
     }
 
-#if UNITY_EDITOR
-    private void OnDrawGizmosSelected()
-    {
-        //// Draw spawn area in editor
-        //Gizmos.color = new Color(0, 1, 0, 0.3f);
-        //Vector3 center = transform.position + new Vector3(spawnAreaOffset.x, spawnAreaOffset.y, 0);
-        //Gizmos.DrawCube(center, new Vector3(spawnAreaWidth, spawnAreaHeight, 0.1f));
+//#if UNITY_EDITOR
+//    private void OnDrawGizmosSelected()
+//    {
+//        //// Draw spawn area in editor
+//        //Gizmos.color = new Color(0, 1, 0, 0.3f);
+//        //Vector3 center = transform.position + new Vector3(spawnAreaOffset.x, spawnAreaOffset.y, 0);
+//        //Gizmos.DrawCube(center, new Vector3(spawnAreaWidth, spawnAreaHeight, 0.1f));
         
-        //// Draw outline
-        //Gizmos.color = Color.green;
-        //Gizmos.DrawWireCube(center, new Vector3(spawnAreaWidth, spawnAreaHeight, 0.1f));
-    }
+//        //// Draw outline
+//        //Gizmos.color = Color.green;
+//        //Gizmos.DrawWireCube(center, new Vector3(spawnAreaWidth, spawnAreaHeight, 0.1f));
+//    }
 
     private IEnumerator DestroyActorWithDelay(GameObject actor, float delay)
     {
         yield return new WaitForSeconds(delay);
         Destroy(actor);
     }
-#endif
+//#endif
 }

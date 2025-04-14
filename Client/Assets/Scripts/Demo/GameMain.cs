@@ -183,6 +183,9 @@ public class GameMain : MonoBehaviour
 
     private void Start()
     {
+        // 设置为窗口模式，分辨率1280x720
+        Screen.SetResolution(1280, 720, FullScreenMode.Windowed);
+
         CursorController.SwitchCursorState(CursorState.Attack);
         for (int i = 0; i < initActorCount; i++)
         {
@@ -245,15 +248,15 @@ public class GameMain : MonoBehaviour
     }
 
     #region
-    private static string cardConfigPath = "Assets/Scripts/Demo/Configs/CardDataConfig.asset";
-    private static CardDataConfig cardDataConfig;
-    public static CardDataConfig CardDataConfig
+    private static string cardConfigPath = "Configs/CardDataConfig";
+    private static CardConfigData cardDataConfig;
+    public static CardConfigData CardDataConfig
     {
         get
         {
             if (cardDataConfig == null)
             {
-                cardDataConfig = AssetDatabase.LoadAssetAtPath<CardDataConfig>(cardConfigPath);
+                cardDataConfig = Resources.Load<CardConfigData>(cardConfigPath);
             }
             return cardDataConfig;
         }

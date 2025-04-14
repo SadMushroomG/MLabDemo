@@ -10,3 +10,5 @@ Client/Client.sln
 Client/Sirenix.OdinInspector.Modules.UnityMathematics.csproj
 Client/obj
 Client/.vs
+Client/Build
+Client/LWGUI.csproj

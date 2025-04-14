@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class CardPoolViewContoller : BaseViewController
 {
     private GameObject canvasRoot;
-    private CardDataConfig config;
+    private CardConfigData config;
     private List<CardComponent> cardComponentList = new();
 
     public override void Init()

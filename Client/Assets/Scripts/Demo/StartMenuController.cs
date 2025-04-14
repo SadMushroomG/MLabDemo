@@ -9,6 +9,8 @@ public class StartMenuController : MonoBehaviour
     
     void Awake()
     {
+        // 设置为窗口模式，分辨率1280x720
+        Screen.SetResolution(1280, 720, FullScreenMode.Windowed);
         startBtn.onClick.AddListener(() => SwitchToGameMain());
     }
 

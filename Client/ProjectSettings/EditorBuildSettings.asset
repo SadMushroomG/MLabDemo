@@ -6,78 +6,81 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+    guid: 2b07824520aaa174f9de37076743176e
+  - enabled: 1
     path: Assets/Scenes/GameMain.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouch/Examples/4.X/_StartScene.unity
     guid: 23139826a0cefdc4ab0cfa66ca9f1027
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouch/Examples/4.X/AdvancedExamples/AutoSelect.unity
     guid: 9cb9b4964fc653b4280fd1964220fe98
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouch/Examples/4.X/GameExemple/BallRun.unity
     guid: 5ac22eac33e47d5449d5b86b4d91c34f
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/Button-Event-Input.unity
     guid: 16fdc4886511cd249b69e5d552a940fe
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/Complexe-FPS-Example.unity
     guid: 9f775d64e2f820140a765e8dae500ee0
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/DPad-Classical-Time.unity
     guid: 60c2228dba2af3a48b52c69084a686a4
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/DPad-Event-Input.unity
     guid: baf07ebc63c5ba04593a47e2e7e06f21
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/FPS_Example.unity
     guid: ed8b4fd5fff466a408f374cb316554c7
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/Joystick-Direct-SimpleFPS.unity
     guid: 3ee1a13285e358249a301f6311176d2c
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/Joystick-Event-Input.unity
     guid: 03ec98b4e627917459cf49c4cf9ff4ea
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/Joystick-Parameter.unity
     guid: 35ccf225ad55e1441a9e06acc543d8f6
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/MainMenu.unity
     guid: 48bbccfb270dc3148a7e07c72d4de07a
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouch/Examples/4.X/AdvancedExamples/MultiCamera.unity
     guid: 578fdf5bb9585174b9b0a88a41758e52
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/MultiFingers.unity
     guid: a17adf9d350388a41817b5ebfc091867
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/OneFinger.unity
     guid: af4d646a671787a4e8db9e671d2287fa
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouch/Examples/5.X new features/QuickGesture.unity
     guid: 897a68b4076b4f441b4ae694f52a349a
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouch/Examples/4.X/GameExemple/RTS_Example.unity
     guid: 1cf9c78521d12f14d8690a557c4c1103
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouch/Examples/5.X new features/RTS_Example_With_New_Syntaxe.unity
     guid: 26609f2a26dfb8e458b420fc9afb84bf
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 2.X_New Features/ThirdPerson+Jump.unity
     guid: d0600752c8afe4c46a1c60763567951b
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 2.X_New Features/ThirdPersonDungeon+Jump.unity
     guid: 5d40ecbb08a26e748ae065ae5e5aa8a8
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouchControls/Examples/Version 1.X/TouchPad-Event-Input.unity
     guid: e1263d15ed65724498ce68cbc1ccc3dc
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouch/Examples/4.X/SimpleExamples/TwoFingers.unity
     guid: d82248ce6f3cbd34680b70fe59a53523
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UICompatibility.unity
     guid: c8d1bdec0a5c94e46b668642301b5f37
-  - enabled: 1
+  - enabled: 0
     path: Assets/EasyTouchBundle/EasyTouch/Examples/4.X/UnityUI/UITwistPinch.unity
     guid: 2b637e0281534ee42801e601e811e9ea
   m_configObjects: {}
