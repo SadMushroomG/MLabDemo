@@ -253,6 +253,11 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 5239743936468063749, guid: 4d8976a33d7951e4d88663fceffcef29,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 54
+      objectReference: {fileID: 0}
     - target: {fileID: 6259531317832439509, guid: 4d8976a33d7951e4d88663fceffcef29,
         type: 3}
       propertyPath: m_IsActive
